@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
-import { schoolData } from "@/data/school";
+import { SOCIAL_LINKS } from "@/data/school";
 
 export default function WhatsAppButton() {
   const pathname = usePathname();
@@ -10,10 +10,7 @@ export default function WhatsAppButton() {
     return null;
   }
 
-  const rawNumber =
-    schoolData.contact.whatsApp || schoolData.contact.admissionsPhone || "18004593382";
-  const cleanPhone = rawNumber.replace(/[^0-9]/g, "");
-  const whatsappUrl = `https://wa.me/${cleanPhone}?text=Hello%20LAX360%20Admissions%20Office`;
+  const whatsappUrl = SOCIAL_LINKS.whatsapp;
 
   return (
     <motion.a

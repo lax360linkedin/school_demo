@@ -513,3 +513,21 @@ export const schoolData: SchoolData = {
     ],
   },
 };
+
+export const getWhatsAppUrl = (): string => {
+  const rawNumber =
+    schoolData.contact.whatsApp || schoolData.contact.admissionsPhone || "18004593382";
+  const cleanPhone = rawNumber.replace(/[^0-9]/g, "");
+  return `https://wa.me/${cleanPhone}?text=Hello%20LAX360%20Admissions%20Office`;
+};
+
+export const SOCIAL_LINKS = {
+  whatsapp: getWhatsAppUrl(),
+  instagram:
+    schoolData.contact.social.find((s) => s.platform.toLowerCase() === "instagram")?.url ||
+    "https://instagram.com",
+  youtube:
+    schoolData.contact.social.find((s) => s.platform.toLowerCase() === "youtube")?.url ||
+    "https://youtube.com",
+};
+

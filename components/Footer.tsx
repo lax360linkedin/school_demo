@@ -10,7 +10,7 @@ import {
   MapPin,
   GraduationCap,
 } from "lucide-react";
-import { schoolData } from "@/data/school";
+import { schoolData, SOCIAL_LINKS } from "@/data/school";
 
 interface FooterProps {
   onOpenAdmissions?: () => void;
@@ -116,11 +116,73 @@ export default function Footer({ onOpenAdmissions }: FooterProps) {
                 holistic character development, and future-ready leadership.
               </p>
 
-              <div className="pt-2">
-                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800 border border-slate-700 text-xs font-semibold text-slate-300">
+              <div className="pt-2 space-y-4">
+                <span className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-800 border border-slate-700 text-xs font-semibold text-slate-300 w-fit">
                   <span className="w-2 h-2 rounded-full bg-emerald-400" />
                   IB World School & Cambridge Certified
                 </span>
+
+                {/* Social Media & Contact Buttons */}
+                <div className="pt-1">
+                  <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400 block mb-3">
+                    Connect With Us
+                  </span>
+                  <div className="flex items-center gap-3">
+                    {/* WhatsApp */}
+                    <a
+                      href={SOCIAL_LINKS.whatsapp}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="WhatsApp"
+                      title="WhatsApp"
+                      className="inline-flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-slate-800/90 border border-slate-700/80 text-slate-300 hover:text-[#25D366] hover:border-[#25D366]/50 hover:bg-[#25D366]/10 shadow-sm transition-all duration-250 ease-out hover:-translate-y-0.5 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-amber-400/80 focus:ring-offset-2 focus:ring-offset-slate-900 cursor-pointer"
+                    >
+                      <svg
+                        viewBox="0 0 24 24"
+                        className="w-5 h-5 fill-current"
+                        aria-hidden="true"
+                      >
+                        <path d="M17.507 14.307l-.009.075c-.239.787-1.168 1.487-1.929 1.656-.514.113-1.189.206-3.447-.732-2.887-1.199-4.743-4.14-4.887-4.333-.142-.191-1.167-1.558-1.167-2.971 0-1.413.738-2.108 1.002-2.395.263-.287.574-.359.765-.359.192 0 .383.003.55.012.177.01.412-.068.644.49.239.574.814 1.986.885 2.13.072.144.12.312.024.503-.095.191-.144.311-.287.478-.143.167-.301.373-.43.501-.144.144-.294.301-.127.588.167.287.744 1.229 1.597 1.99 1.097.978 2.022 1.282 2.309 1.425.287.143.454.12.622-.072.167-.191.717-.837.909-1.124.191-.287.383-.239.645-.143.263.096 1.674.789 1.961.933.287.144.478.216.55.336.072.12.072.694-.167 1.481zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.435 5.178L2 22l4.981-1.396A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.2c-1.636 0-3.158-.475-4.45-1.298l-.319-.202-3.303.926.887-3.21-.212-.338A8.167 8.167 0 013.8 12c0-4.522 3.678-8.2 8.2-8.2s8.2 3.678 8.2 8.2-3.678 8.2-8.2 8.2z" />
+                      </svg>
+                    </a>
+
+                    {/* Instagram */}
+                    <a
+                      href={SOCIAL_LINKS.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Instagram"
+                      title="Instagram"
+                      className="inline-flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-slate-800/90 border border-slate-700/80 text-slate-300 hover:text-rose-400 hover:border-rose-400/50 hover:bg-rose-500/10 shadow-sm transition-all duration-250 ease-out hover:-translate-y-0.5 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-amber-400/80 focus:ring-offset-2 focus:ring-offset-slate-900 cursor-pointer"
+                    >
+                      <svg
+                        viewBox="0 0 24 24"
+                        className="w-5 h-5 fill-current"
+                        aria-hidden="true"
+                      >
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                      </svg>
+                    </a>
+
+                    {/* YouTube */}
+                    <a
+                      href={SOCIAL_LINKS.youtube}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="YouTube"
+                      title="YouTube"
+                      className="inline-flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-slate-800/90 border border-slate-700/80 text-slate-300 hover:text-red-500 hover:border-red-500/50 hover:bg-red-500/10 shadow-sm transition-all duration-250 ease-out hover:-translate-y-0.5 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-amber-400/80 focus:ring-offset-2 focus:ring-offset-slate-900 cursor-pointer"
+                    >
+                      <svg
+                        viewBox="0 0 24 24"
+                        className="w-5 h-5 fill-current"
+                        aria-hidden="true"
+                      >
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
               </div>
             </motion.div>
 
