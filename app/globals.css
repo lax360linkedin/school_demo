@@ -127,3 +127,41 @@ canvas {
   mask-composite: exclude;
   pointer-events: none;
 }
+
+/* Privacy & Cookie Choices Center Viewport Panel */
+.cookie-consent-panel {
+  position: fixed !important;
+  left: 50% !important;
+  bottom: max(12px, env(safe-area-inset-bottom, 12px));
+  width: calc(100vw - 24px);
+  max-width: none;
+}
+
+@media (min-width: 640px) {
+  .cookie-consent-panel {
+    bottom: 24px;
+    width: min(680px, calc(100vw - 48px));
+    max-width: 680px;
+  }
+}
+
+/* Floating WhatsApp and Chatbot button clearance when cookie banner is open */
+@media (max-width: 1023px) {
+  html[data-cookie-banner-open="true"] .floating-whatsapp-btn {
+    bottom: 296px !important;
+  }
+  @media (min-width: 640px) {
+    html[data-cookie-banner-open="true"] .floating-whatsapp-btn {
+      bottom: 192px !important;
+    }
+  }
+  html[data-cookie-banner-open="true"] .floating-chatbot-btn {
+    bottom: 360px !important;
+  }
+  @media (min-width: 640px) {
+    html[data-cookie-banner-open="true"] .floating-chatbot-btn {
+      bottom: 258px !important;
+    }
+  }
+}
+

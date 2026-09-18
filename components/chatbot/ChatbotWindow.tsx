@@ -34,9 +34,34 @@ export function ChatbotWindow({
   onClearChat,
 }: ChatbotWindowProps) {
   const [inputValue, setInputValue] = useState("");
+  const [cookieBannerOpen, setCookieBannerOpen] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const shouldReduceMotion = useReducedMotion();
+
+  useEffect(() => {
+    const handleBannerVisibility = (e: Event) => {
+      const customEvent = e as CustomEvent<{ visible: boolean }>;
+      if (customEvent.detail !== undefined) {
+        setCookieBannerOpen(Boolean(customEvent.detail.visible));
+      } else if (typeof document !== "undefined") {
+        setCookieBannerOpen(
+          document.documentElement.getAttribute("data-cookie-banner-open") === "true"
+        );
+      }
+    };
+
+    if (typeof document !== "undefined") {
+      setCookieBannerOpen(
+        document.documentElement.getAttribute("data-cookie-banner-open") === "true"
+      );
+    }
+
+    window.addEventListener("cookie-banner-visibility", handleBannerVisibility);
+    return () => {
+      window.removeEventListener("cookie-banner-visibility", handleBannerVisibility);
+    };
+  }, []);
 
   // Auto-scroll to bottom when messages update or typing starts
   const scrollToBottom = () => {
@@ -91,7 +116,11 @@ export function ChatbotWindow({
               : { opacity: 0, y: 20, scale: 0.96 }
           }
           transition={{ duration: 0.26, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed bottom-[144px] sm:bottom-[164px] right-3 sm:right-6 z-50 w-[calc(100vw-24px)] sm:w-[390px] h-[520px] sm:h-[570px] max-h-[calc(100vh-160px)] bg-[#FCFBF7] rounded-3xl border border-[#EAE3D7] shadow-2xl shadow-slate-950/20 flex flex-col overflow-hidden text-slate-800"
+          className={`fixed right-3 sm:right-6 z-50 w-[calc(100vw-24px)] sm:w-[390px] h-[520px] sm:h-[570px] max-h-[calc(100vh-160px)] bg-[#FCFBF7] rounded-3xl border border-[#EAE3D7] shadow-2xl shadow-slate-950/20 flex flex-col overflow-hidden text-slate-800 transition-all duration-300 ${
+            cookieBannerOpen
+              ? "bottom-[356px] sm:bottom-[266px] lg:bottom-[164px]"
+              : "bottom-[144px] sm:bottom-[164px]"
+          }`}
         >
           {/* Header */}
           <div className="px-5 py-3.5 bg-slate-900 text-white border-b border-slate-800 flex items-center justify-between shrink-0">

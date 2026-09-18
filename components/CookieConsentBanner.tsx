@@ -35,9 +35,35 @@ export default function CookieConsentBanner() {
 
   useEffect(() => {
     const handleSaved = () => setIsVisible(false);
+    const handleOpenBanner = () => setIsVisible(true);
     window.addEventListener("cookie-preferences-saved", handleSaved);
-    return () => window.removeEventListener("cookie-preferences-saved", handleSaved);
+    window.addEventListener("open-cookie-banner", handleOpenBanner);
+    return () => {
+      window.removeEventListener("cookie-preferences-saved", handleSaved);
+      window.removeEventListener("open-cookie-banner", handleOpenBanner);
+    };
   }, []);
+
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      if (isVisible) {
+        document.documentElement.setAttribute("data-cookie-banner-open", "true");
+        window.dispatchEvent(
+          new CustomEvent("cookie-banner-visibility", { detail: { visible: true } })
+        );
+      } else {
+        document.documentElement.removeAttribute("data-cookie-banner-open");
+        window.dispatchEvent(
+          new CustomEvent("cookie-banner-visibility", { detail: { visible: false } })
+        );
+      }
+    }
+    return () => {
+      if (typeof document !== "undefined") {
+        document.documentElement.removeAttribute("data-cookie-banner-open");
+      }
+    };
+  }, [isVisible]);
 
   if (pathname?.startsWith("/admin")) return null;
 
@@ -115,11 +141,15 @@ export default function CookieConsentBanner() {
     <AnimatePresence>
       {isVisible && (
         <motion.div
-          initial={{ y: 80, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          exit={{ y: 80, opacity: 0 }}
+          initial={{ x: "-50%", y: 80, opacity: 0 }}
+          animate={{ x: "-50%", y: 0, opacity: 1 }}
+          exit={{ x: "-50%", y: 80, opacity: 0 }}
           transition={{ duration: 0.35, ease: "easeOut" }}
-          className="fixed bottom-4 sm:bottom-6 left-4 right-4 sm:left-auto sm:right-6 z-40 max-w-2xl w-full"
+          style={{
+            position: "fixed",
+            left: "50%",
+          }}
+          className="cookie-consent-panel fixed z-40 left-1/2 -translate-x-1/2 bottom-3 sm:bottom-6 w-[calc(100vw-24px)] sm:w-[min(680px,calc(100vw-48px))] max-w-none sm:max-w-[680px]"
         >
           <div className="p-5 sm:p-6 rounded-3xl bg-white/95 backdrop-blur-lg border border-[#EAE3D7] shadow-2xl shadow-slate-900/10 text-slate-900 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5">
             {/* Text and Links */}

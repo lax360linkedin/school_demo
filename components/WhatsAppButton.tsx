@@ -1,11 +1,38 @@
 "use client";
 
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { SOCIAL_LINKS } from "@/data/school";
 
 export default function WhatsAppButton() {
   const pathname = usePathname();
+  const [cookieBannerOpen, setCookieBannerOpen] = useState(false);
+
+  useEffect(() => {
+    const handleBannerVisibility = (e: Event) => {
+      const customEvent = e as CustomEvent<{ visible: boolean }>;
+      if (customEvent.detail !== undefined) {
+        setCookieBannerOpen(Boolean(customEvent.detail.visible));
+      } else if (typeof document !== "undefined") {
+        setCookieBannerOpen(
+          document.documentElement.getAttribute("data-cookie-banner-open") === "true"
+        );
+      }
+    };
+
+    if (typeof document !== "undefined") {
+      setCookieBannerOpen(
+        document.documentElement.getAttribute("data-cookie-banner-open") === "true"
+      );
+    }
+
+    window.addEventListener("cookie-banner-visibility", handleBannerVisibility);
+    return () => {
+      window.removeEventListener("cookie-banner-visibility", handleBannerVisibility);
+    };
+  }, []);
+
   if (pathname?.startsWith("/admin")) {
     return null;
   }
@@ -29,7 +56,11 @@ export default function WhatsAppButton() {
       }}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.94 }}
-      className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#25D366] hover:bg-[#20BA59] text-white shadow-lg hover:shadow-2xl hover:shadow-[#25D366]/40 transition-shadow duration-300 focus:outline-none focus:ring-4 focus:ring-[#25D366]/40 cursor-pointer"
+      className={`floating-whatsapp-btn fixed right-4 sm:right-6 z-50 flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#25D366] hover:bg-[#20BA59] text-white shadow-lg hover:shadow-2xl hover:shadow-[#25D366]/40 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[#25D366]/40 cursor-pointer ${
+        cookieBannerOpen
+          ? "bottom-[296px] sm:bottom-[192px] lg:bottom-6"
+          : "bottom-4 sm:bottom-6"
+      }`}
     >
       {/* Official WhatsApp Vector SVG */}
       <svg

@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { GraduationCap, X, Sparkles, MessageSquareQuote } from "lucide-react";
 
@@ -17,11 +17,43 @@ export function ChatbotButton({
   hasSeenTooltip,
   onDismissTooltip,
 }: ChatbotButtonProps) {
+  const [cookieBannerOpen, setCookieBannerOpen] = useState(false);
+
+  useEffect(() => {
+    const handleBannerVisibility = (e: Event) => {
+      const customEvent = e as CustomEvent<{ visible: boolean }>;
+      if (customEvent.detail !== undefined) {
+        setCookieBannerOpen(Boolean(customEvent.detail.visible));
+      } else if (typeof document !== "undefined") {
+        setCookieBannerOpen(
+          document.documentElement.getAttribute("data-cookie-banner-open") === "true"
+        );
+      }
+    };
+
+    if (typeof document !== "undefined") {
+      setCookieBannerOpen(
+        document.documentElement.getAttribute("data-cookie-banner-open") === "true"
+      );
+    }
+
+    window.addEventListener("cookie-banner-visibility", handleBannerVisibility);
+    return () => {
+      window.removeEventListener("cookie-banner-visibility", handleBannerVisibility);
+    };
+  }, []);
+
   return (
-    <div className="fixed bottom-[74px] right-4 sm:bottom-[92px] sm:right-6 z-50 flex flex-col items-end">
+    <div
+      className={`floating-chatbot-btn fixed right-4 sm:right-6 z-50 flex flex-col items-end transition-all duration-300 ${
+        cookieBannerOpen
+          ? "bottom-[360px] sm:bottom-[258px] lg:bottom-[92px]"
+          : "bottom-[74px] sm:bottom-[92px]"
+      }`}
+    >
       {/* First-visit Educational Tooltip */}
       <AnimatePresence>
-        {!hasSeenTooltip && !isOpen && (
+        {!hasSeenTooltip && !isOpen && !cookieBannerOpen && (
           <motion.div
             initial={{ opacity: 0, y: 8, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
