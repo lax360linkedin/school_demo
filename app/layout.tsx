@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import SchoolChatbot from "@/components/chatbot/SchoolChatbot";
 import CookieConsentBanner from "@/components/CookieConsentBanner";
 import CookiePreferencesModal from "@/components/CookiePreferencesModal";
 
@@ -51,6 +52,7 @@ export default function RootLayout({
       <body className="bg-[#FAF8F5] text-slate-800 overflow-x-hidden antialiased selection:bg-amber-100 selection:text-amber-900">
         {children}
         <WhatsAppButton />
+        <SchoolChatbot />
         <CookieConsentBanner />
         <CookiePreferencesModal />
       </body>
