@@ -251,6 +251,186 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Vision & Mission Section */}
+      <section className="py-20 lg:py-28 bg-white border-b border-[#EAE3D7]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <div className="max-w-3xl mx-auto text-center space-y-3 mb-16">
+            <p className="text-xs font-semibold uppercase tracking-widest text-amber-800">
+              {schoolData.purpose?.eyebrow || "OUR PURPOSE"}
+            </p>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-slate-900 tracking-tight">
+              {schoolData.purpose?.heading || "Vision & Mission"}
+            </h2>
+            <p className="text-base text-slate-600 leading-relaxed max-w-2xl mx-auto">
+              {schoolData.purpose?.subtitle ||
+                "Guided by enduring human values and international academic rigor, our purpose steers every learning inquiry, mentorship bond, and community endeavor at LAX360 Academy."}
+            </p>
+          </div>
+
+          {/* Vision & Mission 2-Column Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
+            {/* Vision Block */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              className="h-full flex"
+            >
+              <FloatingCard
+                maxTilt={3}
+                className="w-full h-full bg-gradient-to-b from-[#FAF8F5] via-[#FAF8F5]/60 to-white rounded-3xl p-8 sm:p-10 border border-[#EAE3D7] shadow-xs hover:shadow-xl hover:border-amber-300/80 transition-all flex flex-col justify-between"
+              >
+                <div className="space-y-6">
+                  {/* Card Header: Badge & Icon */}
+                  <div className="flex items-center justify-between">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#EAE3D7] text-[11px] font-bold text-amber-800 uppercase tracking-wider shadow-2xs">
+                      <Compass className="w-3.5 h-3.5 text-amber-700" />
+                      <span>Guiding Horizon</span>
+                    </div>
+                    <div className="w-11 h-11 rounded-2xl bg-white border border-[#EAE3D7] flex items-center justify-center text-slate-900 shadow-2xs">
+                      <Sparkles className="w-5 h-5 text-amber-700" />
+                    </div>
+                  </div>
+
+                  {/* Title & Core Statement */}
+                  <div className="space-y-3">
+                    <h3 className="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+                      {schoolData.purpose?.vision.title || "Our Vision"}
+                    </h3>
+                    <p className="text-base sm:text-lg text-slate-700 font-serif leading-relaxed italic">
+                      &ldquo;{schoolData.purpose?.vision.description}&rdquo;
+                    </p>
+                  </div>
+
+                  {/* Highlight Commitments */}
+                  {schoolData.purpose?.vision.highlights && (
+                    <div className="space-y-2.5 pt-2">
+                      <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+                        Foundational Commitments
+                      </p>
+                      <div className="space-y-2">
+                        {schoolData.purpose.vision.highlights.map((item, idx) => (
+                          <div
+                            key={idx}
+                            className="flex items-center gap-2.5 text-xs sm:text-sm text-slate-700 font-medium"
+                          >
+                            <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0" />
+                            <span>{item}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* Accent Image with Caption */}
+                <div className="mt-8 pt-4 border-t border-[#EAE3D7]/80">
+                  <div className="relative h-48 sm:h-56 w-full rounded-2xl overflow-hidden border border-[#EAE3D7] bg-slate-100 group">
+                    <Image
+                      src={schoolData.purpose?.vision.image || "/images/campus/field-trips.jpg"}
+                      alt="LAX360 Vision in Action - Student Exploratory Learning"
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/25 to-transparent" />
+                    <div className="absolute bottom-3.5 left-4 right-4">
+                      <p className="text-[11px] font-semibold text-amber-300 uppercase tracking-wider">
+                        Vision in Action
+                      </p>
+                      <p className="text-xs sm:text-sm text-white font-medium drop-shadow-xs">
+                        Cultivating curiosity, empathy, and intellectual independence.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </FloatingCard>
+            </motion.div>
+
+            {/* Mission Block */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+              className="h-full flex"
+            >
+              <FloatingCard
+                maxTilt={3}
+                className="w-full h-full bg-gradient-to-b from-[#FAF8F5] via-[#FAF8F5]/60 to-white rounded-3xl p-8 sm:p-10 border border-[#EAE3D7] shadow-xs hover:shadow-xl hover:border-amber-300/80 transition-all flex flex-col justify-between"
+              >
+                <div className="space-y-6">
+                  {/* Card Header: Badge & Icon */}
+                  <div className="flex items-center justify-between">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-[#EAE3D7] text-[11px] font-bold text-amber-800 uppercase tracking-wider shadow-2xs">
+                      <Target className="w-3.5 h-3.5 text-amber-700" />
+                      <span>Everyday Mission</span>
+                    </div>
+                    <div className="w-11 h-11 rounded-2xl bg-white border border-[#EAE3D7] flex items-center justify-center text-slate-900 shadow-2xs">
+                      <HeartHandshake className="w-5 h-5 text-amber-700" />
+                    </div>
+                  </div>
+
+                  {/* Title & Core Statement */}
+                  <div className="space-y-3">
+                    <h3 className="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
+                      {schoolData.purpose?.mission.title || "Our Mission"}
+                    </h3>
+                    <p className="text-base sm:text-lg text-slate-700 font-serif leading-relaxed italic">
+                      &ldquo;{schoolData.purpose?.mission.description}&rdquo;
+                    </p>
+                  </div>
+
+                  {/* Highlight Commitments */}
+                  {schoolData.purpose?.mission.highlights && (
+                    <div className="space-y-2.5 pt-2">
+                      <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+                        Everyday Practices
+                      </p>
+                      <div className="space-y-2">
+                        {schoolData.purpose.mission.highlights.map((item, idx) => (
+                          <div
+                            key={idx}
+                            className="flex items-center gap-2.5 text-xs sm:text-sm text-slate-700 font-medium"
+                          >
+                            <CheckCircle2 className="w-4 h-4 text-emerald-700 shrink-0" />
+                            <span>{item}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* Accent Image with Caption */}
+                <div className="mt-8 pt-4 border-t border-[#EAE3D7]/80">
+                  <div className="relative h-48 sm:h-56 w-full rounded-2xl overflow-hidden border border-[#EAE3D7] bg-slate-100 group">
+                    <Image
+                      src={schoolData.purpose?.mission.image || "/images/campus/classroom.jpg"}
+                      alt="LAX360 Mission in Action - Mentorship and Collaborative Classroom"
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 50vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/25 to-transparent" />
+                    <div className="absolute bottom-3.5 left-4 right-4">
+                      <p className="text-[11px] font-semibold text-amber-300 uppercase tracking-wider">
+                        Mission in Action
+                      </p>
+                      <p className="text-xs sm:text-sm text-white font-medium drop-shadow-xs">
+                        Safe, inclusive environments where every learner flourishes.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </FloatingCard>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Principal / Head of School Leadership Message */}
       <section className="py-20 lg:py-28 bg-[#FAF8F5] border-b border-[#EAE3D7]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

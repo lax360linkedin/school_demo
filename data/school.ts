@@ -92,6 +92,23 @@ export interface SchoolData {
     value: string;
     detail: string;
   }[];
+  purpose?: {
+    eyebrow: string;
+    heading: string;
+    subtitle?: string;
+    vision: {
+      title: string;
+      description: string;
+      highlights: string[];
+      image: string;
+    };
+    mission: {
+      title: string;
+      description: string;
+      highlights: string[];
+      image: string;
+    };
+  };
 }
 
 export const schoolData: SchoolData = {
@@ -120,6 +137,35 @@ export const schoolData: SchoolData = {
     { label: "Student Nationalities", value: "48+", detail: "Vibrant multicultural community" },
     { label: "Average IB Diploma Score", value: "38.6", detail: "Global average: 30.2" },
   ],
+
+  purpose: {
+    eyebrow: "OUR PURPOSE",
+    heading: "Vision & Mission",
+    subtitle:
+      "Guided by enduring human values and international academic rigor, our purpose steers every learning inquiry, mentorship bond, and community endeavor at LAX360 Academy.",
+    vision: {
+      title: "Our Vision",
+      description:
+        "To nurture confident, compassionate and curious learners who are prepared to grow, contribute and make a meaningful difference in the world.",
+      highlights: [
+        "Inquiry-led academic excellence",
+        "Empathetic global citizenship",
+        "Resilient creative confidence",
+      ],
+      image: "/images/campus/field-trips.jpg",
+    },
+    mission: {
+      title: "Our Mission",
+      description:
+        "To provide a safe, inclusive and inspiring learning environment where every student is encouraged to discover their strengths, develop strong values and achieve their potential through meaningful learning experiences.",
+      highlights: [
+        "Student-centered mentorship",
+        "Inclusive pastoral care",
+        "Hands-on exploratory learning",
+      ],
+      image: "/images/campus/classroom.jpg",
+    },
+  },
 
   heroSections: [
     {
