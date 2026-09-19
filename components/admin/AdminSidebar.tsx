@@ -15,9 +15,7 @@ import {
   GraduationCap,
   Inbox,
   BriefcaseBusiness,
-  Layers,
   ShieldAlert,
-  FileCheck,
   Cookie,
   BarChart3,
   ExternalLink,
@@ -45,12 +43,10 @@ const mainNavItems = [
   { href: "/admin/admissions", label: "Admissions", icon: GraduationCap },
   { href: "/admin/enquiries", label: "Enquiries", icon: Inbox, hasBadge: true },
   { href: "/admin/careers", label: "Careers", icon: BriefcaseBusiness },
-  { href: "/admin/content", label: "Content Sections", icon: Layers },
 ];
 
 const privacyNavItems = [
   { href: "/admin/privacy/requests", label: "Data Rights Requests", icon: ShieldAlert },
-  { href: "/admin/privacy/consents", label: "Consent Audit Trail", icon: FileCheck },
   { href: "/admin/privacy/cookies", label: "Cookie Governance", icon: Cookie },
 ];
 
