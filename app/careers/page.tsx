@@ -241,17 +241,17 @@ export default function CareersPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden border-b border-[#EAE3D7]">
+      <section className="relative pt-28 pb-14 lg:pt-32 lg:pb-16 overflow-hidden border-b border-[#EAE3D7]">
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#F7F4EE] via-[#FCFBF7] to-[#FCFBF7]" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left Content */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="lg:col-span-7 space-y-6"
+              className="lg:col-span-7 space-y-5 sm:space-y-6"
             >
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 border border-amber-200/80 text-amber-900 text-xs font-semibold uppercase tracking-wider">
                 <BriefcaseBusiness className="w-3.5 h-3.5 text-amber-700" />
@@ -318,9 +318,9 @@ export default function CareersPage() {
       </section>
 
       {/* Introduction / Purpose Section */}
-      <section className="py-20 lg:py-24 bg-white border-b border-[#EAE3D7]">
+      <section className="py-12 lg:py-16 bg-white border-b border-[#EAE3D7]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center space-y-4 mb-16">
+          <div className="max-w-3xl mx-auto text-center space-y-4 mb-8 sm:mb-10">
             <h2 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900 tracking-tight">
               Build a Career With Purpose
             </h2>
@@ -332,8 +332,8 @@ export default function CareersPage() {
           </div>
 
           {/* 3 Clean Purpose Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-[#FCFBF7] rounded-2xl p-8 border border-[#EAE3D7] space-y-4 hover:border-slate-300 transition-colors">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            <div className="bg-[#FCFBF7] rounded-2xl p-6 sm:p-7 border border-[#EAE3D7] space-y-4 hover:border-slate-300 transition-colors">
               <div className="w-12 h-12 rounded-xl bg-amber-100/70 text-amber-900 flex items-center justify-center">
                 <Target className="w-6 h-6 text-amber-800" />
               </div>
@@ -344,7 +344,7 @@ export default function CareersPage() {
               </p>
             </div>
 
-            <div className="bg-[#FCFBF7] rounded-2xl p-8 border border-[#EAE3D7] space-y-4 hover:border-slate-300 transition-colors">
+            <div className="bg-[#FCFBF7] rounded-2xl p-6 sm:p-7 border border-[#EAE3D7] space-y-4 hover:border-slate-300 transition-colors">
               <div className="w-12 h-12 rounded-xl bg-slate-100 text-slate-900 flex items-center justify-center">
                 <TrendingUp className="w-6 h-6 text-slate-800" />
               </div>
@@ -355,7 +355,7 @@ export default function CareersPage() {
               </p>
             </div>
 
-            <div className="bg-[#FCFBF7] rounded-2xl p-8 border border-[#EAE3D7] space-y-4 hover:border-slate-300 transition-colors">
+            <div className="bg-[#FCFBF7] rounded-2xl p-6 sm:p-7 border border-[#EAE3D7] space-y-4 hover:border-slate-300 transition-colors">
               <div className="w-12 h-12 rounded-xl bg-amber-100/70 text-amber-900 flex items-center justify-center">
                 <UsersRound className="w-6 h-6 text-amber-800" />
               </div>
@@ -370,9 +370,9 @@ export default function CareersPage() {
       </section>
 
       {/* Why Join Our School Community (6 Value Cards) */}
-      <section id="why-join" className="py-20 lg:py-28 bg-[#FAF8F5] border-b border-[#EAE3D7]">
+      <section id="why-join" className="py-14 sm:py-16 lg:py-20 bg-[#FAF8F5] border-b border-[#EAE3D7]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto space-y-3 mb-16">
+          <div className="text-center max-w-3xl mx-auto space-y-3 mb-8 sm:mb-10">
             <p className="text-xs font-semibold uppercase tracking-wider text-amber-800">
               OUR FACULTY EXPERIENCE
             </p>
@@ -384,7 +384,7 @@ export default function CareersPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
             {/* Card 1 */}
             <div className="bg-white rounded-2xl p-7 border border-[#EAE3D7] shadow-xs space-y-3.5 hover:shadow-md transition-shadow">
               <div className="w-10 h-10 rounded-xl bg-slate-100 text-slate-800 flex items-center justify-center">
@@ -469,9 +469,9 @@ export default function CareersPage() {
       </section>
 
       {/* Explore Career Opportunities (Academic vs Non-Academic Pathways) */}
-      <section className="py-20 bg-white border-b border-[#EAE3D7]">
+      <section className="py-12 lg:py-16 bg-white border-b border-[#EAE3D7]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
+          <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10 space-y-3">
             <h2 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900 tracking-tight">
               Explore Career Pathways
             </h2>
@@ -480,9 +480,9 @@ export default function CareersPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             {/* Academic Roles */}
-            <div className="p-8 rounded-3xl bg-[#FAF8F5] border border-[#EAE3D7] space-y-5">
+            <div className="p-6 sm:p-8 rounded-3xl bg-[#FAF8F5] border border-[#EAE3D7] space-y-5">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-slate-900 text-white flex items-center justify-center">
                   <BookOpen className="w-5 h-5" />
@@ -516,7 +516,7 @@ export default function CareersPage() {
             </div>
 
             {/* Non-Academic & Administrative Roles */}
-            <div className="p-8 rounded-3xl bg-[#FAF8F5] border border-[#EAE3D7] space-y-5">
+            <div className="p-6 sm:p-8 rounded-3xl bg-[#FAF8F5] border border-[#EAE3D7] space-y-5">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-xl bg-amber-600 text-white flex items-center justify-center">
                   <Building2 className="w-5 h-5" />
@@ -555,9 +555,9 @@ export default function CareersPage() {
       </section>
 
       {/* Current Opportunities Section */}
-      <section id="opportunities" className="py-20 lg:py-28 bg-[#FAF8F5] flex-1">
+      <section id="opportunities" className="py-14 sm:py-16 lg:py-20 bg-[#FAF8F5] flex-1">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center space-y-3 mb-12">
+          <div className="max-w-3xl mx-auto text-center space-y-3 mb-8 sm:mb-10">
             <p className="text-xs font-semibold uppercase tracking-wider text-amber-800">
               OPEN FACULTY & STAFF POSITIONS
             </p>
@@ -570,7 +570,7 @@ export default function CareersPage() {
           </div>
 
           {/* Search & Category Filter Tabs */}
-          <div className="mb-10 space-y-4">
+          <div className="mb-6 sm:mb-8 space-y-4">
             <div className="max-w-md mx-auto relative">
               <Search className="w-4 h-4 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2" />
               <input
@@ -669,7 +669,7 @@ export default function CareersPage() {
           )}
 
           {/* General Spontaneous Application Callout */}
-          <div className="mt-14 max-w-3xl mx-auto rounded-3xl bg-white border border-[#EAE3D7] p-8 sm:p-10 shadow-xs text-center space-y-4">
+          <div className="mt-8 sm:mt-10 max-w-3xl mx-auto rounded-3xl bg-white border border-[#EAE3D7] p-6 sm:p-8 shadow-xs text-center space-y-4">
             <h3 className="text-xl font-serif font-bold text-slate-900">
               Don&apos;t see your specific specialization listed?
             </h3>

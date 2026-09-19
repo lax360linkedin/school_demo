@@ -197,7 +197,7 @@ export default function ProgramsPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 border-b border-[#EAE3D7] overflow-hidden">
+      <section className="relative pt-28 pb-14 lg:pt-32 lg:pb-16 border-b border-[#EAE3D7] overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#F7F4EE] via-[#FCFBF7] to-[#FCFBF7]" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -236,9 +236,9 @@ export default function ProgramsPage() {
       </section>
 
       {/* Educational Stages Section */}
-      <section id="stages" className="py-20 lg:py-28 bg-[#FAF8F5] border-b border-[#EAE3D7]">
+      <section id="stages" className="py-14 sm:py-16 lg:py-20 bg-[#FAF8F5] border-b border-[#EAE3D7]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center space-y-3 mb-12">
+          <div className="max-w-3xl mx-auto text-center space-y-3 mb-8">
             <p className="text-xs font-semibold uppercase tracking-wider text-amber-800">
               LEARNING PROGRESSION
             </p>
@@ -251,7 +251,7 @@ export default function ProgramsPage() {
           </div>
 
           {/* Stage Filter Tabs */}
-          <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
+          <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
             <button
               onClick={() => setActiveStage("all")}
               className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
@@ -278,12 +278,12 @@ export default function ProgramsPage() {
           </div>
 
           {/* Program Stages List */}
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {filteredStages.map((stage) => (
               <FloatingCard
                 key={stage.id}
                 maxTilt={2}
-                className="bg-white rounded-3xl p-8 sm:p-10 border border-[#EAE3D7] shadow-xs hover:border-amber-200 transition-colors"
+                className="bg-white rounded-3xl p-6 sm:p-8 border border-[#EAE3D7] shadow-xs hover:border-amber-200 transition-colors"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                   <div className="lg:col-span-5 space-y-4">
@@ -363,9 +363,9 @@ export default function ProgramsPage() {
       </section>
 
       {/* Transdisciplinary Focus Areas */}
-      <section className="py-20 lg:py-28 bg-white border-b border-[#EAE3D7]">
+      <section className="py-14 sm:py-16 lg:py-20 bg-white border-b border-[#EAE3D7]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center space-y-3 mb-16">
+          <div className="max-w-3xl mx-auto text-center space-y-3 mb-10 lg:mb-12">
             <p className="text-xs font-semibold uppercase tracking-wider text-amber-800">
               HOLISTIC EXCELLENCE
             </p>
@@ -446,7 +446,7 @@ export default function ProgramsPage() {
       </section>
 
       {/* Academic Advisory Callout */}
-      <section className="py-16 bg-[#FAF8F5]">
+      <section className="py-12 lg:py-14 bg-[#FAF8F5]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <h3 className="text-2xl sm:text-3xl font-serif font-bold text-slate-900">
             Need Guidance on Choosing the Right Academic Stage?

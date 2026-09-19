@@ -67,19 +67,19 @@ export default function AcademicSection() {
   ];
 
   return (
-    <section id="academics" className="relative py-28 md:py-36 bg-transparent overflow-hidden">
+    <section id="academics" className="relative py-14 sm:py-16 lg:py-20 bg-transparent overflow-hidden">
       {/* Background Decorative Warm Accents */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] bg-gradient-to-r from-amber-100/30 via-orange-50/20 to-transparent blur-3xl pointer-events-none rounded-full" />
 
       <div className="w-full px-6 sm:px-10 lg:px-16 max-w-[1800px] mx-auto relative z-10">
         {/* Section Header */}
-        <div className="max-w-4xl mx-auto text-center mb-20">
+        <div className="max-w-4xl mx-auto text-center mb-10 lg:mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#EAE3D7] shadow-sm backdrop-blur-md mb-5"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#EAE3D7] shadow-sm backdrop-blur-md mb-3"
           >
             <Award className="w-3.5 h-3.5 text-academic-gold" />
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-academic-gold">
@@ -92,7 +92,7 @@ export default function AcademicSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-slate-900 mb-6"
+            className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-slate-900 mb-4"
           >
             Education Designed for the{" "}
             <span className="text-gold-gradient">Future</span>
@@ -113,7 +113,7 @@ export default function AcademicSection() {
         </div>
 
         {/* 3 Core Animated Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-10 lg:mb-12">
           {cards.map((card, idx) => {
             const Icon = card.icon;
             return (

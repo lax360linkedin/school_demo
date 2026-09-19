@@ -108,11 +108,11 @@ export default function ContactPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 border-b border-[#EAE3D7] overflow-hidden">
+      <section className="relative pt-28 pb-14 lg:pt-32 lg:pb-16 border-b border-[#EAE3D7] overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#F7F4EE] via-[#FCFBF7] to-[#FCFBF7]" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center space-y-6">
+          <div className="max-w-3xl mx-auto text-center space-y-5 sm:space-y-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-900 text-xs font-semibold uppercase tracking-wider mx-auto">
               <Mail className="w-3.5 h-3.5 text-amber-700" />
               <span>CAMPUS DIRECTORY & ENQUIRIES</span>
@@ -132,9 +132,9 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Cards & Form Grid */}
-      <section className="py-20 lg:py-28 bg-[#FAF8F5] border-b border-[#EAE3D7]">
+      <section className="py-14 sm:py-16 lg:py-20 bg-[#FAF8F5] border-b border-[#EAE3D7]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             {/* Left: Contact Directory */}
             <div className="lg:col-span-5 space-y-6">
               {/* Campus Address */}
@@ -191,7 +191,7 @@ export default function ContactPage() {
 
             {/* Right: Interactive Message Form */}
             <div className="lg:col-span-7">
-              <div className="bg-white rounded-3xl p-8 sm:p-10 border border-[#EAE3D7] shadow-lg space-y-6">
+              <div className="bg-white rounded-3xl p-6 sm:p-8 lg:p-10 border border-[#EAE3D7] shadow-lg space-y-6">
                 {!isSubmitted ? (
                   <>
                     <div className="space-y-1.5">

@@ -103,19 +103,19 @@ export default function AdmissionsSection({
   const isModalActive = modalType !== null || Boolean(isModalOpenExternal);
 
   return (
-    <section id="admissions" className="relative py-28 md:py-36 bg-transparent overflow-hidden">
+    <section id="admissions" className="relative py-14 sm:py-16 lg:py-20 bg-transparent overflow-hidden">
       {/* Background Lighting */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-amber-100/30 blur-[140px] pointer-events-none rounded-full" />
 
       <div className="w-full px-6 sm:px-10 lg:px-16 max-w-[1800px] mx-auto relative z-10">
         {/* Section Header */}
-        <div className="max-w-4xl mx-auto text-center mb-16">
+        <div className="max-w-4xl mx-auto text-center mb-10 lg:mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#EAE3D7] shadow-sm backdrop-blur-md mb-4"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#EAE3D7] shadow-sm backdrop-blur-md mb-3"
           >
             <GraduationCap className="w-3.5 h-3.5 text-academic-gold" />
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-academic-gold">
@@ -128,7 +128,7 @@ export default function AdmissionsSection({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-slate-900 mb-5"
+            className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-slate-900 mb-3 sm:mb-4"
           >
             Your Journey <span className="text-gold-gradient">Starts Here</span>
           </motion.h2>
@@ -145,7 +145,7 @@ export default function AdmissionsSection({
         </div>
 
         {/* 4-Step Process Timeline */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10 lg:mb-12">
           {schoolData.admissions.steps.map((item, idx) => {
             const IconComponent = stepIcons[idx] || GraduationCap;
             return (
@@ -239,8 +239,8 @@ export default function AdmissionsSection({
         </motion.div>
 
         {/* Frequently Asked Questions Accordion */}
-        <div className="mt-20 max-w-4xl mx-auto">
-          <h4 className="text-2xl font-bold text-center text-slate-900 mb-8">
+        <div className="mt-10 lg:mt-12 max-w-4xl mx-auto">
+          <h4 className="text-2xl font-bold text-center text-slate-900 mb-6">
             Admissions FAQs
           </h4>
           <div className="space-y-4">

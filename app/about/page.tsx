@@ -136,7 +136,7 @@ export default function AboutPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 border-b border-[#EAE3D7] overflow-hidden">
+      <section className="relative pt-28 pb-14 lg:pt-32 lg:pb-16 border-b border-[#EAE3D7] overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#F7F4EE] via-[#FCFBF7] to-[#FCFBF7]" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -212,7 +212,7 @@ export default function AboutPage() {
       </section>
 
       {/* Key Institutional Numbers */}
-      <section className="py-14 bg-white border-b border-[#EAE3D7]">
+      <section className="py-10 lg:py-12 bg-white border-b border-[#EAE3D7]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-slate-100">
             <div className="pt-4 md:pt-0">
@@ -252,10 +252,10 @@ export default function AboutPage() {
       </section>
 
       {/* Vision & Mission Section */}
-      <section className="py-20 lg:py-28 bg-white border-b border-[#EAE3D7]">
+      <section className="py-14 sm:py-16 lg:py-20 bg-white border-b border-[#EAE3D7]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
-          <div className="max-w-3xl mx-auto text-center space-y-3 mb-16">
+          <div className="max-w-3xl mx-auto text-center space-y-3 mb-10 lg:mb-12">
             <p className="text-xs font-semibold uppercase tracking-widest text-amber-800">
               {schoolData.purpose?.eyebrow || "OUR PURPOSE"}
             </p>
@@ -432,9 +432,9 @@ export default function AboutPage() {
       </section>
 
       {/* Principal / Head of School Leadership Message */}
-      <section className="py-20 lg:py-28 bg-[#FAF8F5] border-b border-[#EAE3D7]">
+      <section className="py-14 sm:py-16 lg:py-20 bg-[#FAF8F5] border-b border-[#EAE3D7]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-3xl p-8 sm:p-12 lg:p-16 border border-[#EAE3D7] shadow-sm">
+          <div className="bg-white rounded-3xl p-6 sm:p-10 lg:p-12 border border-[#EAE3D7] shadow-sm">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
               <div className="lg:col-span-4 flex flex-col items-center text-center">
                 <div className="relative w-44 h-44 sm:w-52 sm:h-52 rounded-2xl overflow-hidden border-2 border-[#EAE3D7] shadow-md mb-4 bg-slate-100">
@@ -499,9 +499,9 @@ export default function AboutPage() {
       </section>
 
       {/* What Makes LAX360 Different (5 Distinctive Pillars) */}
-      <section className="py-20 lg:py-28 bg-white border-b border-[#EAE3D7]">
+      <section className="py-14 sm:py-16 lg:py-20 bg-white border-b border-[#EAE3D7]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center space-y-3 mb-16">
+          <div className="max-w-3xl mx-auto text-center space-y-3 mb-10 lg:mb-12">
             <p className="text-xs font-semibold uppercase tracking-wider text-amber-800">
               DISTINCTIVE ADVANTAGES
             </p>
@@ -551,9 +551,9 @@ export default function AboutPage() {
       </section>
 
       {/* Institutional Milestones Timeline */}
-      <section className="py-20 lg:py-28 bg-[#FAF8F5] border-b border-[#EAE3D7]">
+      <section className="py-14 sm:py-16 lg:py-20 bg-[#FAF8F5] border-b border-[#EAE3D7]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center space-y-3 mb-16">
+          <div className="max-w-3xl mx-auto text-center space-y-3 mb-10 lg:mb-12">
             <p className="text-xs font-semibold uppercase tracking-wider text-amber-800">
               OUR JOURNEY
             </p>
@@ -565,7 +565,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {milestones.map((item, idx) => (
               <div
                 key={idx}
@@ -583,9 +583,9 @@ export default function AboutPage() {
       </section>
 
       {/* Foundational Ethos & Pedagogical Pillars */}
-      <section className="py-20 lg:py-28 bg-white border-b border-[#EAE3D7]">
+      <section className="py-14 sm:py-16 lg:py-20 bg-white border-b border-[#EAE3D7]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center space-y-4 mb-16">
+          <div className="max-w-3xl mx-auto text-center space-y-4 mb-10 lg:mb-12">
             <p className="text-xs font-semibold uppercase tracking-wider text-amber-800">
               CORE PHILOSOPHY
             </p>
@@ -598,7 +598,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             {leadershipValues.map((val, idx) => {
               const Icon = val.icon;
               return (
@@ -619,9 +619,9 @@ export default function AboutPage() {
       </section>
 
       {/* Accreditations & Global Standards */}
-      <section className="py-20 bg-[#FAF8F5] border-b border-[#EAE3D7]">
+      <section className="py-12 lg:py-16 bg-[#FAF8F5] border-b border-[#EAE3D7]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center space-y-3 mb-12">
+          <div className="max-w-3xl mx-auto text-center space-y-3 mb-8">
             <h2 className="text-3xl font-serif font-bold text-slate-900">
               Accreditations & Affiliations
             </h2>
@@ -645,7 +645,7 @@ export default function AboutPage() {
       </section>
 
       {/* Bottom CTA Banner */}
-      <section className="py-16 bg-white">
+      <section className="py-12 lg:py-14 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
           <h2 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900">
             Experience the LAX360 Campus

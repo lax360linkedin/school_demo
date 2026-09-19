@@ -27,9 +27,9 @@ export default function Footer({ onOpenAdmissions }: FooterProps) {
   return (
     <>
       {/* 18. Final Cinematic CTA Section ("SHAPE THE FUTURE") with Original Cream Gradient Background */}
-      <section className="relative w-full py-24 bg-[#F5F0E8] overflow-hidden border-t border-[#EAE3D7]">
+      <section className="relative w-full py-14 sm:py-16 lg:py-20 bg-[#F5F0E8] overflow-hidden border-t border-[#EAE3D7]">
         <div className="relative w-full px-6 sm:px-10 lg:px-16 max-w-[1800px] mx-auto">
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-white via-[#FDFBF7] to-[#F5EFE6] border border-[#EAE3D7] p-10 sm:p-16 lg:p-20 text-center shadow-lg">
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-white via-[#FDFBF7] to-[#F5EFE6] border border-[#EAE3D7] p-8 sm:p-12 lg:p-14 text-center shadow-lg">
             {/* Slanted Accent Backdrop */}
             <div
               className="absolute -top-32 -left-32 w-96 h-96 bg-amber-100/40 transform -rotate-12 rounded-3xl blur-2xl pointer-events-none"
@@ -39,18 +39,18 @@ export default function Footer({ onOpenAdmissions }: FooterProps) {
             />
 
             <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#EAE3D7] shadow-sm backdrop-blur-md mb-6">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#EAE3D7] shadow-sm backdrop-blur-md mb-3 sm:mb-4">
                 <GraduationCap className="w-3.5 h-3.5 text-academic-gold" />
                 <span className="text-xs font-bold uppercase tracking-[0.25em] text-slate-800">
                   The Next Generation of Leaders
                 </span>
               </div>
 
-              <h2 className="text-4xl sm:text-6xl md:text-7xl font-black text-slate-900 tracking-tight uppercase mb-6 leading-none">
+              <h2 className="text-4xl sm:text-6xl md:text-7xl font-black text-slate-900 tracking-tight uppercase mb-3 sm:mb-4 leading-none">
                 SHAPE THE <span className="text-gold-gradient">FUTURE</span>
               </h2>
 
-              <p className="text-base sm:text-xl text-slate-700 font-normal leading-relaxed mb-10 max-w-2xl">
+              <p className="text-base sm:text-xl text-slate-700 font-normal leading-relaxed mb-6 sm:mb-8 max-w-2xl">
                 Give your child an environment where curiosity becomes knowledge and
                 knowledge becomes confidence.
               </p>
@@ -78,10 +78,10 @@ export default function Footer({ onOpenAdmissions }: FooterProps) {
       </section>
 
       {/* 19. Institutional 4-Column Footer (Dark navy background) */}
-      <footer id="contact" className="relative bg-slate-900 text-white pt-20 pb-12 overflow-hidden border-t border-slate-800">
+      <footer id="contact" className="relative bg-slate-900 text-white pt-14 sm:pt-16 pb-12 overflow-hidden border-t border-slate-800">
         <div className="w-full px-6 sm:px-10 lg:px-16 max-w-[1800px] mx-auto">
           {/* Rebalanced 4-Column Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 pb-16 border-b border-slate-800">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 pb-10 lg:pb-12 border-b border-slate-800">
             {/* Column 1: School Brand & Identity */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}

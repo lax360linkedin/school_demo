@@ -156,7 +156,7 @@ export default function CampusLifePage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 border-b border-[#EAE3D7] overflow-hidden">
+      <section className="relative pt-28 pb-14 lg:pt-32 lg:pb-16 border-b border-[#EAE3D7] overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#F7F4EE] via-[#FCFBF7] to-[#FCFBF7]" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -232,9 +232,9 @@ export default function CampusLifePage() {
       </section>
 
       {/* 11 Student Life Facets Showcase */}
-      <section id="facets" className="py-20 lg:py-28 bg-[#FAF8F5] border-b border-[#EAE3D7]">
+      <section id="facets" className="py-14 sm:py-16 lg:py-20 bg-[#FAF8F5] border-b border-[#EAE3D7]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center space-y-3 mb-12">
+          <div className="max-w-3xl mx-auto text-center space-y-3 mb-8">
             <p className="text-xs font-semibold uppercase tracking-wider text-amber-800">
               CO-CURRICULAR DIMENSIONS
             </p>
@@ -248,7 +248,7 @@ export default function CampusLifePage() {
           </div>
 
           {/* Facet Filter Tabs */}
-          <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
+          <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
             {facetCategories.map((cat) => (
               <button
                 key={cat}
@@ -265,7 +265,7 @@ export default function CampusLifePage() {
           </div>
 
           {/* Cards Grid with FloatingCard Tilt */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {filteredFacets.map((facet, idx) => (
               <FloatingCard
                 key={idx}
@@ -304,9 +304,9 @@ export default function CampusLifePage() {
       </section>
 
       {/* Four-House Collegiate System */}
-      <section id="houses" className="py-20 bg-white border-b border-[#EAE3D7]">
+      <section id="houses" className="py-12 lg:py-16 bg-white border-b border-[#EAE3D7]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center space-y-3 mb-14">
+          <div className="max-w-3xl mx-auto text-center space-y-3 mb-8 sm:mb-10">
             <p className="text-xs font-semibold uppercase tracking-wider text-amber-800">
               COLLEGIATE SPIRIT
             </p>
@@ -361,9 +361,9 @@ export default function CampusLifePage() {
       </section>
 
       {/* Clubs & Student Societies */}
-      <section id="clubs" className="py-20 lg:py-28 bg-[#FAF8F5] border-b border-[#EAE3D7]">
+      <section id="clubs" className="py-14 sm:py-16 lg:py-20 bg-[#FAF8F5] border-b border-[#EAE3D7]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center space-y-3 mb-16">
+          <div className="max-w-3xl mx-auto text-center space-y-3 mb-8 sm:mb-10">
             <p className="text-xs font-semibold uppercase tracking-wider text-amber-800">
               STUDENT INITIATIVES
             </p>
@@ -407,9 +407,9 @@ export default function CampusLifePage() {
       </section>
 
       {/* Upcoming Events & Campus Calendar */}
-      <section id="events" className="py-20 bg-white border-b border-[#EAE3D7]">
+      <section id="events" className="py-12 lg:py-16 bg-white border-b border-[#EAE3D7]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center space-y-3 mb-14">
+          <div className="max-w-3xl mx-auto text-center space-y-3 mb-8 sm:mb-10">
             <p className="text-xs font-semibold uppercase tracking-wider text-amber-800">
               CAMPUS SCHEDULE
             </p>
@@ -421,7 +421,7 @@ export default function CampusLifePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {events.map((event) => (
               <div
                 key={event.id}

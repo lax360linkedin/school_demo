@@ -8,20 +8,20 @@ import FloatingCard from "./ui/FloatingCard";
 
 export default function FacilitiesSection() {
   return (
-    <section id="facilities" className="relative py-28 md:py-36 bg-[#F5F0E8]/60 overflow-hidden">
+    <section id="facilities" className="relative py-14 sm:py-16 lg:py-20 bg-[#F5F0E8]/60 overflow-hidden">
       {/* Background Decorative Rings */}
       <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-amber-100/40 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-orange-100/30 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="w-full px-6 sm:px-10 lg:px-16 max-w-[1800px] mx-auto relative z-10">
         {/* Section Header */}
-        <div className="max-w-4xl mx-auto text-center mb-16">
+        <div className="max-w-4xl mx-auto text-center mb-10 lg:mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#EAE3D7] shadow-sm backdrop-blur-md mb-4"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#EAE3D7] shadow-sm backdrop-blur-md mb-3"
           >
             <Building2 className="w-3.5 h-3.5 text-blue-700" />
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-slate-800">
@@ -34,7 +34,7 @@ export default function FacilitiesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-slate-900 mb-5"
+            className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-slate-900 mb-3 sm:mb-4"
           >
             Spaces That <span className="text-gold-gradient">Inspire Learning</span>
           </motion.h2>
@@ -53,7 +53,7 @@ export default function FacilitiesSection() {
         </div>
 
         {/* Facilities Grid (8 Facilities) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
           {schoolData.facilities.map((facility, idx) => (
             <motion.div
               key={facility.id}

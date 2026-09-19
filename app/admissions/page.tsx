@@ -217,11 +217,11 @@ export default function AdmissionsPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 border-b border-[#EAE3D7] overflow-hidden">
+      <section className="relative pt-28 pb-14 lg:pt-32 lg:pb-16 border-b border-[#EAE3D7] overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#F7F4EE] via-[#FCFBF7] to-[#FCFBF7]" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center space-y-6">
+          <div className="max-w-3xl mx-auto text-center space-y-5 sm:space-y-6">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-amber-900 text-xs font-semibold uppercase tracking-wider mx-auto">
               <GraduationCap className="w-3.5 h-3.5 text-amber-700" />
               <span>ADMISSIONS CYCLE 2026–2027</span>
@@ -256,9 +256,9 @@ export default function AdmissionsPage() {
       </section>
 
       {/* 4-Step Admissions Roadmap */}
-      <section id="roadmap" className="py-20 lg:py-28 bg-[#FAF8F5] border-b border-[#EAE3D7]">
+      <section id="roadmap" className="py-14 sm:py-16 lg:py-20 bg-[#FAF8F5] border-b border-[#EAE3D7]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center space-y-3 mb-16">
+          <div className="max-w-3xl mx-auto text-center space-y-3 mb-10 lg:mb-12">
             <p className="text-xs font-semibold uppercase tracking-wider text-amber-800">
               TRANSPARENT & STUDENT-CENTRED
             </p>
@@ -306,9 +306,9 @@ export default function AdmissionsPage() {
       </section>
 
       {/* Deadlines & Key Dates */}
-      <section className="py-20 bg-white border-b border-[#EAE3D7]">
+      <section className="py-12 lg:py-16 bg-white border-b border-[#EAE3D7]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-3 mb-12">
+          <div className="text-center space-y-3 mb-8 sm:mb-10">
             <h2 className="text-3xl font-serif font-bold text-slate-900">
               Key Dates & Evaluation Rounds
             </h2>
@@ -357,9 +357,9 @@ export default function AdmissionsPage() {
       </section>
 
       {/* Eligibility & Age Criteria Matrix */}
-      <section className="py-20 lg:py-28 bg-[#FAF8F5] border-b border-[#EAE3D7]">
+      <section className="py-12 lg:py-16 bg-[#FAF8F5] border-b border-[#EAE3D7]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center space-y-3 mb-12">
+          <div className="max-w-3xl mx-auto text-center space-y-3 mb-8 sm:mb-10">
             <p className="text-xs font-semibold uppercase tracking-wider text-amber-800">
               AGE & READINESS
             </p>
@@ -395,9 +395,9 @@ export default function AdmissionsPage() {
       </section>
 
       {/* Required Documentation Checklist */}
-      <section className="py-20 bg-white border-b border-[#EAE3D7]">
+      <section className="py-12 lg:py-16 bg-white border-b border-[#EAE3D7]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center space-y-3 mb-14">
+          <div className="max-w-3xl mx-auto text-center space-y-3 mb-8 sm:mb-10">
             <p className="text-xs font-semibold uppercase tracking-wider text-amber-800">
               PREPARATION
             </p>
@@ -433,9 +433,9 @@ export default function AdmissionsPage() {
       </section>
 
       {/* Institutional Fee Guidance Disclaimer */}
-      <section className="py-16 bg-[#FAF8F5] border-b border-[#EAE3D7]">
+      <section className="py-12 lg:py-14 bg-[#FAF8F5] border-b border-[#EAE3D7]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-3xl p-8 sm:p-10 border border-[#EAE3D7] shadow-xs space-y-4">
+          <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#EAE3D7] shadow-xs space-y-4">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-amber-50 text-amber-900 flex items-center justify-center shrink-0">
                 <Info className="w-5 h-5 text-amber-800" />
@@ -465,9 +465,9 @@ export default function AdmissionsPage() {
       </section>
 
       {/* Interactive Admission Enquiry Form */}
-      <section id="apply-form" className="py-20 lg:py-28 bg-white border-b border-[#EAE3D7]">
+      <section id="apply-form" className="py-14 sm:py-16 lg:py-20 bg-white border-b border-[#EAE3D7]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-[#FAF8F5] rounded-3xl p-8 sm:p-12 border border-[#EAE3D7] shadow-lg space-y-6">
+          <div className="bg-[#FAF8F5] rounded-3xl p-6 sm:p-10 border border-[#EAE3D7] shadow-lg space-y-6">
             {!isSubmitted ? (
               <>
                 <div className="space-y-2 text-center">
@@ -668,9 +668,9 @@ export default function AdmissionsPage() {
       </section>
 
       {/* Frequently Asked Questions */}
-      <section className="py-20 lg:py-28 bg-[#FAF8F5] border-b border-[#EAE3D7]">
+      <section className="py-12 lg:py-16 bg-[#FAF8F5] border-b border-[#EAE3D7]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center space-y-3 mb-14">
+          <div className="text-center space-y-3 mb-8 sm:mb-10">
             <p className="text-xs font-semibold uppercase tracking-wider text-amber-800">
               COMMON QUESTIONS
             </p>

@@ -66,17 +66,17 @@ export default function CookiePolicyPage() {
     <div className="min-h-screen bg-[#FAF8F5] text-slate-900 flex flex-col font-sans">
       <Navbar />
 
-      <main className="flex-1 pt-28 pb-20">
+      <main className="flex-1 pt-24 pb-14">
         {/* Hero Header */}
-        <section className="px-6 sm:px-10 lg:px-16 max-w-5xl mx-auto pt-8 pb-10 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#EAE3D7] shadow-xs backdrop-blur-md mb-6">
+        <section className="px-6 sm:px-10 lg:px-16 max-w-5xl mx-auto pt-6 pb-8 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#EAE3D7] shadow-xs backdrop-blur-md mb-4 sm:mb-6">
             <Cookie className="w-4 h-4 text-amber-800" />
             <span className="text-xs font-bold uppercase tracking-[0.25em] text-slate-800">
               Cookie Transparency
             </span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight mb-4">
+          <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight mb-3 sm:mb-4">
             Cookie Policy
           </h1>
           <p className="text-base sm:text-lg text-slate-600 font-medium max-w-xl mx-auto">
@@ -91,7 +91,7 @@ export default function CookiePolicyPage() {
         </section>
 
         {/* Quick Preferences Trigger Card */}
-        <section className="px-6 sm:px-10 lg:px-16 max-w-4xl mx-auto mb-14">
+        <section className="px-6 sm:px-10 lg:px-16 max-w-4xl mx-auto mb-8">
           <div className="p-6 sm:p-8 rounded-3xl bg-white border border-[#EAE3D7] shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
             <div className="max-w-xl">
               <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-amber-800 mb-1">
@@ -116,7 +116,7 @@ export default function CookiePolicyPage() {
         </section>
 
         {/* Policy Content Sections */}
-        <section className="px-6 sm:px-10 lg:px-16 max-w-4xl mx-auto space-y-12 text-slate-800 leading-relaxed text-sm">
+        <section className="px-6 sm:px-10 lg:px-16 max-w-4xl mx-auto space-y-6 sm:space-y-8 text-slate-800 leading-relaxed text-sm">
           {/* Section 1 */}
           <div className="bg-white p-6 sm:p-8 rounded-2xl border border-[#EAE3D7]">
             <h2 className="text-lg sm:text-xl font-bold text-slate-900 mb-3 flex items-center gap-2">

@@ -92,20 +92,20 @@ const activities: CampusActivityItem[] = [
 
 export default function CampusLifeSection() {
   return (
-    <section id="campus" className="relative py-28 md:py-36 bg-transparent overflow-hidden">
+    <section id="campus" className="relative py-14 sm:py-16 lg:py-20 bg-transparent overflow-hidden">
       {/* Ambient background decoration */}
       <div className="absolute top-1/3 right-0 w-96 h-96 bg-amber-200/20 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 left-0 w-96 h-96 bg-orange-100/30 rounded-full blur-3xl pointer-events-none" />
 
       <div className="w-full px-6 sm:px-10 lg:px-16 max-w-[1800px] mx-auto relative z-10">
         {/* Section Header */}
-        <div className="max-w-4xl mx-auto text-center mb-16">
+        <div className="max-w-4xl mx-auto text-center mb-10 lg:mb-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#EAE3D7] shadow-sm backdrop-blur-md mb-4"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#EAE3D7] shadow-sm backdrop-blur-md mb-3"
           >
             <Users className="w-3.5 h-3.5 text-amber-700" />
             <span className="text-xs font-bold uppercase tracking-[0.2em] text-slate-800">
@@ -118,7 +118,7 @@ export default function CampusLifeSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-slate-900 mb-5"
+            className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-slate-900 mb-3 sm:mb-4"
           >
             More Than a <span className="text-gold-gradient">Classroom</span>
           </motion.h2>
@@ -137,7 +137,7 @@ export default function CampusLifeSection() {
         </div>
 
         {/* Cinematic Grid of 8 Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
           {activities.map((act, index) => (
             <motion.div
               key={act.id}

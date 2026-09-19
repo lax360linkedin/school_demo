@@ -74,17 +74,17 @@ export default function PrivacyNoticePage() {
     <div className="min-h-screen bg-[#FAF8F5] text-slate-900 flex flex-col font-sans">
       <Navbar />
 
-      <main className="flex-1 pt-28 pb-20">
+      <main className="flex-1 pt-24 pb-14">
         {/* Hero Header */}
-        <section className="px-6 sm:px-10 lg:px-16 max-w-5xl mx-auto pt-8 pb-12 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#EAE3D7] shadow-xs backdrop-blur-md mb-6">
+        <section className="px-6 sm:px-10 lg:px-16 max-w-5xl mx-auto pt-6 pb-8 text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#EAE3D7] shadow-xs backdrop-blur-md mb-4 sm:mb-6">
             <ShieldCheck className="w-4 h-4 text-amber-800" />
             <span className="text-xs font-bold uppercase tracking-[0.25em] text-slate-800">
               Data Governance & Trust
             </span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight mb-4">
+          <h1 className="text-3xl sm:text-5xl font-black text-slate-900 tracking-tight mb-3 sm:mb-4">
             Privacy Notice
           </h1>
           <p className="text-base sm:text-lg text-slate-600 font-medium max-w-xl mx-auto">
@@ -99,8 +99,8 @@ export default function PrivacyNoticePage() {
         </section>
 
         {/* 11 Comprehensive Privacy Sections */}
-        <section className="px-6 sm:px-10 lg:px-16 max-w-4xl mx-auto space-y-10">
-          <div className="p-8 sm:p-12 rounded-3xl bg-white border border-[#EAE3D7] shadow-xs space-y-10 text-sm text-slate-700 leading-relaxed">
+        <section className="px-6 sm:px-10 lg:px-16 max-w-4xl mx-auto space-y-6">
+          <div className="p-6 sm:p-10 rounded-3xl bg-white border border-[#EAE3D7] shadow-xs space-y-6 sm:space-y-8 text-sm text-slate-700 leading-relaxed">
             {/* Section 1 */}
             <div className="space-y-2">
               <h2 className="text-lg font-bold text-slate-900 tracking-tight flex items-center gap-2.5">
@@ -252,8 +252,8 @@ export default function PrivacyNoticePage() {
         </section>
 
         {/* DPDP DATA RIGHTS INTERACTIVE UI */}
-        <section className="px-6 sm:px-10 lg:px-16 max-w-4xl mx-auto pt-16">
-          <div className="p-8 sm:p-12 rounded-3xl bg-white border border-[#EAE3D7] shadow-lg">
+        <section className="px-6 sm:px-10 lg:px-16 max-w-4xl mx-auto pt-10 sm:pt-12">
+          <div className="p-6 sm:p-10 rounded-3xl bg-white border border-[#EAE3D7] shadow-lg">
             <div className="max-w-2xl mx-auto text-center mb-8">
               <div className="w-12 h-12 rounded-2xl bg-slate-900 text-amber-300 flex items-center justify-center mx-auto mb-3">
                 <ShieldCheck className="w-6 h-6" />

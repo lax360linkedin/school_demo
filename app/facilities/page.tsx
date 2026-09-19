@@ -68,7 +68,7 @@ export default function FacilitiesPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 border-b border-[#EAE3D7] overflow-hidden">
+      <section className="relative pt-28 pb-14 lg:pt-32 lg:pb-16 border-b border-[#EAE3D7] overflow-hidden">
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#F7F4EE] via-[#FCFBF7] to-[#FCFBF7]" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -144,9 +144,9 @@ export default function FacilitiesPage() {
       </section>
 
       {/* Facilities Grid */}
-      <section id="spaces" className="py-20 lg:py-28 bg-[#FAF8F5] border-b border-[#EAE3D7]">
+      <section id="spaces" className="py-14 sm:py-16 lg:py-20 bg-[#FAF8F5] border-b border-[#EAE3D7]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center space-y-3 mb-12">
+          <div className="max-w-3xl mx-auto text-center space-y-3 mb-8">
             <p className="text-xs font-semibold uppercase tracking-wider text-amber-800">
               CAMPUS HIGHLIGHTS
             </p>
@@ -160,7 +160,7 @@ export default function FacilitiesPage() {
           </div>
 
           {/* Category Filter Chips */}
-          <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
+          <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
             {categories.map((cat) => (
               <button
                 key={cat}
@@ -176,7 +176,7 @@ export default function FacilitiesPage() {
             ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {filteredFacilities.map((fac) => (
               <FloatingCard
                 key={fac.id}
@@ -233,9 +233,9 @@ export default function FacilitiesPage() {
       </section>
 
       {/* Campus Health, Safety & Pastoral Security */}
-      <section className="py-20 lg:py-28 bg-white border-b border-[#EAE3D7]">
+      <section className="py-14 sm:py-16 lg:py-20 bg-white border-b border-[#EAE3D7]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center space-y-3 mb-16">
+          <div className="max-w-3xl mx-auto text-center space-y-3 mb-8 sm:mb-10">
             <p className="text-xs font-semibold uppercase tracking-wider text-amber-800">
               SAFETY & CARE
             </p>
@@ -248,11 +248,11 @@ export default function FacilitiesPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             {campusSafetyFeatures.map((feat, idx) => (
               <div
                 key={idx}
-                className="bg-[#FAF8F5] rounded-3xl p-8 border border-[#EAE3D7] shadow-xs space-y-3"
+                className="bg-[#FAF8F5] rounded-3xl p-6 sm:p-8 border border-[#EAE3D7] shadow-xs space-y-3"
               >
                 <div className="w-10 h-10 rounded-xl bg-white border border-[#EAE3D7] text-slate-900 flex items-center justify-center">
                   <ShieldCheck className="w-5 h-5 text-emerald-700" />
@@ -266,7 +266,7 @@ export default function FacilitiesPage() {
       </section>
 
       {/* Schedule Tour Callout */}
-      <section className="py-16 bg-[#FAF8F5]">
+      <section className="py-12 lg:py-14 bg-[#FAF8F5]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
           <h3 className="text-2xl sm:text-3xl font-serif font-bold text-slate-900">
             Tour Our Campus Grounds
