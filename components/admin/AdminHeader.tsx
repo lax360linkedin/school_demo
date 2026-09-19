@@ -23,6 +23,7 @@ interface AdminHeaderProps {
 
 const routeTitles: Record<string, { title: string; category: string }> = {
   "/admin/dashboard": { title: "Executive Overview", category: "Dashboard" },
+  "/admin/analytics": { title: "Institutional Analytics & Reports", category: "Insights" },
   "/admin/programs": { title: "Academic Programs", category: "Academics" },
   "/admin/campus-life": { title: "Campus Life Activities", category: "Student Affairs" },
   "/admin/student-life": { title: "Student Clubs & Houses", category: "Student Affairs" },
@@ -107,10 +108,10 @@ export default function AdminHeader({
         </button>
 
         <div className="min-w-0">
-          <div className="flex items-center gap-1.5 text-xs font-medium text-slate-400">
+          <div className="flex items-center gap-1.5 text-xs font-semibold text-slate-500">
             <span>Portal</span>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-300" />
-            <span className="text-slate-600 font-semibold">{currentRoute.category}</span>
+            <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
+            <span className="text-slate-800 font-bold">{currentRoute.category}</span>
           </div>
           <h1 className="text-lg sm:text-xl font-bold text-slate-900 truncate tracking-tight mt-0.5">
             {currentRoute.title}
@@ -122,14 +123,14 @@ export default function AdminHeader({
       <div className="flex items-center gap-3 sm:gap-4 shrink-0">
         {/* Search bar (desktop) */}
         {onSearchChange && (
-          <div className="hidden md:flex items-center relative w-64 lg:w-72">
-            <Search className="w-4 h-4 text-slate-400 absolute left-3.5 pointer-events-none" />
+          <div className="hidden md:flex items-center relative w-72 lg:w-80">
+            <Search className="w-5 h-5 text-slate-500 absolute left-3.5 pointer-events-none" />
             <input
               type="text"
               value={searchTerm || ""}
               onChange={(e) => onSearchChange(e.target.value)}
               placeholder={searchPlaceholder}
-              className="w-full pl-10 pr-4 py-2 rounded-xl border border-slate-200 bg-slate-50/70 text-xs sm:text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:bg-white transition-all shadow-xs"
+              className="w-full pl-11 pr-4 min-h-[46px] h-[46px] rounded-xl border border-slate-200 bg-slate-50 text-sm text-slate-900 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:bg-white transition-all shadow-xs"
             />
           </div>
         )}

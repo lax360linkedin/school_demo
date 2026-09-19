@@ -109,15 +109,15 @@ export default function AdminPrivacyConsentsPage() {
       {/* Top Banner & Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-2">
         <div>
-          <div className="flex items-center gap-2 text-xs font-semibold text-slate-500 mb-1">
+          <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 mb-1">
             <span>DPDP Governance</span>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-300" />
-            <span className="text-slate-800">Consent Audit Register</span>
+            <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
+            <span className="text-slate-900 font-bold">Consent Audit Register</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 font-serif">
             Consent Audit Trail
           </h2>
-          <p className="mt-1 text-sm text-slate-500">
+          <p className="mt-1 text-sm text-slate-700">
             Immutable register of informed consent events recorded across admissions inquiries, career applications, and cookie policies.
           </p>
         </div>
@@ -125,7 +125,7 @@ export default function AdminPrivacyConsentsPage() {
         <div className="flex items-center gap-3">
           <button
             onClick={handleExportCSV}
-            className="px-4 py-2.5 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 text-slate-800 text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 shadow-xs cursor-pointer"
+            className="min-h-[44px] h-[44px] px-4 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 text-slate-800 text-sm font-semibold transition-all flex items-center gap-2 shadow-xs cursor-pointer"
           >
             <Download className="w-4 h-4 text-slate-600" />
             <span>Export Audit Log (CSV)</span>
@@ -167,23 +167,23 @@ export default function AdminPrivacyConsentsPage() {
 
       {/* Search and Filter */}
       <div className="p-4 sm:p-5 rounded-2xl bg-white border border-[#EAE3D7] shadow-xs flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
-        <div className="relative flex-1 max-w-md">
-          <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+        <div className="relative w-full sm:w-[360px]">
+          <Search className="w-5 h-5 text-slate-500 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
           <input
             type="text"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Search by subject name, email, or record ID..."
-            className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50/70 text-xs sm:text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:bg-white transition-all"
+            className="w-full min-h-[46px] h-[46px] pl-11 pr-4 rounded-xl border border-slate-200 bg-slate-50 text-sm text-slate-900 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:bg-white transition-all shadow-xs"
           />
         </div>
 
         <div className="flex items-center gap-2">
-          <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Consent Type:</span>
+          <span className="text-xs font-bold text-slate-700 uppercase tracking-wider">Consent Type:</span>
           <select
             value={typeFilter}
             onChange={(e) => setTypeFilter(e.target.value)}
-            className="px-3 py-2 rounded-xl border border-slate-200 bg-white text-xs sm:text-sm font-medium text-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-900 cursor-pointer"
+            className="h-[38px] px-3.5 rounded-xl border border-slate-200 bg-white text-xs sm:text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900 cursor-pointer"
           >
             <option value="All">All Types ({consents.length})</option>
             <option value="Admissions">Admissions Inquiries ({admissionsCount})</option>
@@ -198,7 +198,7 @@ export default function AdminPrivacyConsentsPage() {
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse text-xs sm:text-sm">
             <thead>
-              <tr className="bg-slate-50/90 border-b border-slate-200 text-slate-700 font-bold uppercase tracking-wider text-[11px]">
+              <tr className="bg-slate-50/90 border-b border-slate-100 text-slate-700 font-bold uppercase tracking-wider text-xs">
                 <th className="p-4 pl-6">Consent Event ID & Date</th>
                 <th className="p-4">Data Principal / Subject</th>
                 <th className="p-4">Consent Category</th>
@@ -207,27 +207,27 @@ export default function AdminPrivacyConsentsPage() {
                 <th className="p-4 text-right pr-6">Legal Record</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100 text-slate-600">
+            <tbody className="divide-y divide-slate-100 text-xs sm:text-sm">
               {filteredConsents.length === 0 ? (
                 <tr>
-                  <td colSpan={6} className="p-12 text-center text-slate-400">
-                    <FileCheck className="w-8 h-8 mx-auto text-slate-300 mb-2" />
-                    <p className="font-semibold text-slate-600">No consent records matched your query.</p>
+                  <td colSpan={6} className="p-12 text-center text-slate-500 font-medium">
+                    <FileCheck className="w-8 h-8 mx-auto text-slate-400 mb-2" />
+                    <p className="font-semibold text-slate-700">No consent records matched your query.</p>
                   </td>
                 </tr>
               ) : (
                 filteredConsents.map((item) => (
                   <tr key={item.id} className="hover:bg-slate-50/80 transition-colors">
                     <td className="p-4 pl-6">
-                      <p className="font-mono font-bold text-slate-900 text-xs">{item.id}</p>
-                      <p className="text-xs text-slate-400 mt-0.5">{item.timestamp || item.date}</p>
+                      <p className="font-mono font-bold text-slate-950 text-xs">{item.id}</p>
+                      <p className="text-xs text-slate-600 mt-0.5 font-medium">{item.timestamp || item.date}</p>
                     </td>
 
                     <td className="p-4">
                       <p className="font-bold text-slate-900 text-sm">
                         {item.subjectName || item.user || "School Visitor"}
                       </p>
-                      <p className="text-xs text-slate-500 mt-0.5">
+                      <p className="text-xs text-slate-600 mt-0.5 font-medium">
                         {item.subjectEmail || item.user || "Verified Submission"}
                       </p>
                     </td>
@@ -238,16 +238,16 @@ export default function AdminPrivacyConsentsPage() {
                       </span>
                     </td>
 
-                    <td className="p-4 text-xs text-slate-600">
-                      <p className="font-medium text-slate-800">{item.channel || "Web Form"}</p>
-                      <span className="text-[11px] text-slate-400 font-mono">
+                    <td className="p-4 text-xs text-slate-700">
+                      <p className="font-semibold text-slate-900">{item.channel || "Web Form"}</p>
+                      <span className="text-xs text-slate-600 font-mono font-medium">
                         IP: {item.ipAddress || "103.117.xxx.xxx (Anonymized)"}
                       </span>
                     </td>
 
                     <td className="p-4 text-center">
-                      <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 text-[11px] font-bold border border-emerald-200/60">
-                        <CheckCircle2 className="w-3 h-3 text-emerald-600" />
+                      <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 text-xs font-bold border border-emerald-200/60 shadow-xs">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
                         {item.consent || "Granted"}
                       </span>
                     </td>
@@ -255,7 +255,7 @@ export default function AdminPrivacyConsentsPage() {
                     <td className="p-4 text-right pr-6 whitespace-nowrap">
                       <button
                         onClick={() => handleOpenRecord(item)}
-                        className="p-2 rounded-xl text-slate-500 hover:text-slate-900 hover:bg-slate-100 transition-colors cursor-pointer"
+                        className="min-h-[36px] sm:min-h-[38px] h-[36px] sm:h-[38px] w-[36px] sm:w-[38px] rounded-xl border border-slate-200 text-slate-700 hover:text-slate-950 hover:bg-slate-100 inline-flex items-center justify-center transition-colors cursor-pointer shadow-xs"
                         title="View Full Consent Transcript"
                       >
                         <Eye className="w-4 h-4" />
@@ -330,12 +330,12 @@ export default function AdminPrivacyConsentsPage() {
             </div>
 
             <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
-              <span className="text-[11px] text-slate-400 font-mono">
+              <span className="text-xs text-slate-600 font-mono font-medium">
                 Cryptographic Integrity: Verified
               </span>
               <button
                 onClick={() => setIsModalOpen(false)}
-                className="px-4 py-2 rounded-xl bg-slate-900 text-white text-xs font-semibold"
+                className="min-h-[40px] h-[40px] px-5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-sm font-semibold shadow-xs transition-colors cursor-pointer"
               >
                 Close Audit View
               </button>

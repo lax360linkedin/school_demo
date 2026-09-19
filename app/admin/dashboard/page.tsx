@@ -71,17 +71,17 @@ export default function AdminDashboardPage() {
           <p className="mt-3 text-sm sm:text-base text-slate-300 leading-relaxed">
             Monitor institutional enrollment, review admissions inquiries, manage faculty hiring positions, and govern student & parent data privacy compliance across campus operations.
           </p>
-          <div className="mt-6 flex flex-wrap items-center gap-3.5 text-xs sm:text-sm">
+          <div className="mt-6 flex flex-wrap items-center gap-3.5 text-sm">
             <Link
               href="/admin/enquiries"
-              className="px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold transition-all flex items-center gap-2 shadow-sm"
+              className="min-h-[44px] h-[44px] px-5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold transition-all flex items-center gap-2 shadow-sm"
             >
               <Inbox className="w-4 h-4" />
               <span>Review {newEnquiries.length} New Inquiries</span>
             </Link>
             <Link
               href="/admin/careers/applications"
-              className="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold transition-all flex items-center gap-2 border border-white/15"
+              className="min-h-[44px] h-[44px] px-5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-semibold transition-all flex items-center gap-2 border border-white/15"
             >
               <Briefcase className="w-4 h-4 text-amber-400" />
               <span>{applications.length} Job Applications</span>
@@ -90,7 +90,7 @@ export default function AdminDashboardPage() {
               href="/"
               target="_blank"
               rel="noreferrer"
-              className="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-medium transition-all flex items-center gap-2 border border-white/15"
+              className="min-h-[44px] h-[44px] px-5 rounded-xl bg-white/10 hover:bg-white/20 text-white font-medium transition-all flex items-center gap-2 border border-white/15"
             >
               <ExternalLink className="w-4 h-4" />
               <span>Preview Public Website</span>
@@ -147,82 +147,43 @@ export default function AdminDashboardPage() {
         <h3 className="text-base sm:text-lg font-bold text-slate-900 mb-3.5">
           Quick Management Desks
         </h3>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <Link
             href="/admin/careers"
-            className="p-4 rounded-2xl bg-white border border-[#EAE3D7] hover:border-slate-400 hover:shadow-md transition-all flex flex-col items-start gap-2.5 group"
+            className="p-5 rounded-2xl bg-white border border-[#EAE3D7] hover:border-slate-400 hover:shadow-md transition-all flex flex-col items-start gap-3 group"
           >
-            <div className="w-10 h-10 rounded-xl bg-purple-50 text-purple-800 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+            <div className="w-11 h-11 rounded-xl bg-purple-50 text-purple-800 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform border border-purple-100">
               <Briefcase className="w-5 h-5" />
             </div>
             <div className="min-w-0">
-              <p className="text-xs sm:text-sm font-bold text-slate-900 truncate">Job Openings</p>
-              <p className="text-xs text-slate-500 truncate">{activeJobs.length} Active Posts</p>
+              <p className="text-sm font-bold text-slate-900 truncate">Job Openings</p>
+              <p className="text-xs text-slate-700 font-medium truncate mt-0.5">{activeJobs.length} Active Posts</p>
             </div>
           </Link>
 
           <Link
             href="/admin/careers/applications"
-            className="p-4 rounded-2xl bg-white border border-[#EAE3D7] hover:border-slate-400 hover:shadow-md transition-all flex flex-col items-start gap-2.5 group"
+            className="p-5 rounded-2xl bg-white border border-[#EAE3D7] hover:border-slate-400 hover:shadow-md transition-all flex flex-col items-start gap-3 group"
           >
-            <div className="w-10 h-10 rounded-xl bg-indigo-50 text-indigo-800 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+            <div className="w-11 h-11 rounded-xl bg-indigo-50 text-indigo-800 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform border border-indigo-100">
               <Users className="w-5 h-5" />
             </div>
             <div className="min-w-0">
-              <p className="text-xs sm:text-sm font-bold text-slate-900 truncate">Applications</p>
-              <p className="text-xs text-slate-500 truncate">{applications.length} Candidates</p>
+              <p className="text-sm font-bold text-slate-900 truncate">Applications</p>
+              <p className="text-xs text-slate-700 font-medium truncate mt-0.5">{applications.length} Candidates</p>
             </div>
           </Link>
 
           <Link
             href="/admin/privacy/requests"
-            className="p-4 rounded-2xl bg-white border border-[#EAE3D7] hover:border-slate-400 hover:shadow-md transition-all flex flex-col items-start gap-2.5 group"
+            className="p-5 rounded-2xl bg-white border border-[#EAE3D7] hover:border-slate-400 hover:shadow-md transition-all flex flex-col items-start gap-3 group"
           >
-            <div className="w-10 h-10 rounded-xl bg-amber-50 text-amber-900 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+            <div className="w-11 h-11 rounded-xl bg-amber-50 text-amber-900 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform border border-amber-100">
               <ShieldAlert className="w-5 h-5" />
             </div>
             <div className="min-w-0">
-              <p className="text-xs sm:text-sm font-bold text-slate-900 truncate">Data Requests</p>
-              <p className="text-xs text-slate-500 truncate">{pendingRequests.length} Needs Review</p>
-            </div>
-          </Link>
-
-          <Link
-            href="/admin/privacy/consents"
-            className="p-4 rounded-2xl bg-white border border-[#EAE3D7] hover:border-slate-400 hover:shadow-md transition-all flex flex-col items-start gap-2.5 group"
-          >
-            <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-800 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
-              <FileCheck className="w-5 h-5" />
-            </div>
-            <div className="min-w-0">
-              <p className="text-xs sm:text-sm font-bold text-slate-900 truncate">Consent Trail</p>
-              <p className="text-xs text-slate-500 truncate">DPDP Logs</p>
-            </div>
-          </Link>
-
-          <Link
-            href="/admin/privacy/cookies"
-            className="p-4 rounded-2xl bg-white border border-[#EAE3D7] hover:border-slate-400 hover:shadow-md transition-all flex flex-col items-start gap-2.5 group"
-          >
-            <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-800 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
-              <Cookie className="w-5 h-5" />
-            </div>
-            <div className="min-w-0">
-              <p className="text-xs sm:text-sm font-bold text-slate-900 truncate">Cookie Setup</p>
-              <p className="text-xs text-slate-500 truncate">Banner & Policy</p>
-            </div>
-          </Link>
-
-          <Link
-            href="/admin/programs"
-            className="p-4 rounded-2xl bg-white border border-[#EAE3D7] hover:border-slate-400 hover:shadow-md transition-all flex flex-col items-start gap-2.5 group"
-          >
-            <div className="w-10 h-10 rounded-xl bg-slate-100 text-slate-800 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
-              <BookOpen className="w-5 h-5" />
-            </div>
-            <div className="min-w-0">
-              <p className="text-xs sm:text-sm font-bold text-slate-900 truncate">Programs</p>
-              <p className="text-xs text-slate-500 truncate">{programs.length} Tiers</p>
+              <p className="text-sm font-bold text-slate-900 truncate">Data Requests</p>
+              <p className="text-xs text-slate-700 font-medium truncate mt-0.5">{pendingRequests.length} Needs Review</p>
             </div>
           </Link>
         </div>
@@ -265,14 +226,14 @@ export default function AdminDashboardPage() {
                         {item.status}
                       </span>
                     </div>
-                    <p className="text-xs text-slate-500 mt-0.5 truncate">
+                    <p className="text-xs text-slate-700 font-medium mt-0.5 truncate">
                       {item.targetGrade || item.type} &bull; {item.phone}
                     </p>
-                    <p className="text-xs sm:text-sm text-slate-600 mt-1 line-clamp-1 italic">
+                    <p className="text-xs sm:text-sm text-slate-800 mt-1 line-clamp-1 italic">
                       &ldquo;{item.message}&rdquo;
                     </p>
                   </div>
-                  <span className="text-xs text-slate-400 shrink-0 font-medium">{item.date}</span>
+                  <span className="text-xs text-slate-700 shrink-0 font-semibold">{item.date}</span>
                 </div>
               ))}
             </div>
@@ -281,7 +242,7 @@ export default function AdminDashboardPage() {
           <div className="pt-4 border-t border-slate-100">
             <Link
               href="/admin/enquiries"
-              className="block w-full py-2.5 text-center rounded-xl bg-slate-50 hover:bg-slate-100 text-xs sm:text-sm font-semibold text-slate-700 transition-colors"
+              className="block w-full py-2.5 text-center rounded-xl bg-slate-50 hover:bg-slate-100 text-xs sm:text-sm font-semibold text-slate-800 transition-colors"
             >
               Open Enquiries Management Desk &rarr;
             </Link>
@@ -311,17 +272,17 @@ export default function AdminDashboardPage() {
                   <div className="min-w-0">
                     <div className="flex items-center gap-2">
                       <p className="text-xs sm:text-sm font-bold text-slate-900 truncate">{evt.title}</p>
-                      <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-700">
+                      <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-slate-100 text-slate-800 border border-slate-200/60">
                         {evt.category}
                       </span>
                     </div>
-                    <p className="text-xs text-slate-500 mt-0.5 truncate">
+                    <p className="text-xs text-slate-700 font-medium mt-0.5 truncate">
                       {evt.location} &bull; {evt.targetGrades}
                     </p>
                   </div>
                   <div className="text-right shrink-0">
                     <span className="text-xs sm:text-sm font-bold text-slate-900 block">{evt.date}</span>
-                    <span className="text-[11px] text-slate-400">{evt.time || "Full Day"}</span>
+                    <span className="text-[11px] text-slate-600 font-medium">{evt.time || "Full Day"}</span>
                   </div>
                 </div>
               ))}
@@ -331,7 +292,7 @@ export default function AdminDashboardPage() {
           <div className="pt-4 border-t border-slate-100">
             <Link
               href="/admin/events"
-              className="block w-full py-2.5 text-center rounded-xl bg-slate-50 hover:bg-slate-100 text-xs sm:text-sm font-semibold text-slate-700 transition-colors"
+              className="block w-full py-2.5 text-center rounded-xl bg-slate-50 hover:bg-slate-100 text-xs sm:text-sm font-semibold text-slate-800 transition-colors"
             >
               Add or Edit School Calendar &rarr;
             </Link>

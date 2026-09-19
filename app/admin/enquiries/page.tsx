@@ -177,24 +177,24 @@ export default function AdminEnquiriesPage() {
           <h2 className="text-xl font-bold text-slate-900 tracking-tight">
             Prospect Enquiries & Applications
           </h2>
-          <p className="text-xs text-slate-500 mt-0.5">
+          <p className="text-sm text-slate-700 mt-1">
             Real-time pipeline of admissions interest, campus visit requests, and parental consultations
           </p>
         </div>
 
-        <div className="flex items-center gap-2 self-start sm:self-auto">
+        <div className="flex items-center gap-3 self-start sm:self-auto">
           <button
             type="button"
             onClick={handleExportCSV}
-            className="px-3 py-2 rounded-xl border border-slate-200 bg-white text-xs font-semibold text-slate-700 hover:text-slate-950 hover:bg-slate-50 transition-colors flex items-center gap-1.5 shadow-xs"
+            className="min-h-[44px] h-[44px] px-4 rounded-xl border border-slate-200 bg-white text-sm font-semibold text-slate-800 hover:text-slate-950 hover:bg-slate-50 transition-colors flex items-center gap-2 shadow-xs cursor-pointer"
           >
-            <Download className="w-3.5 h-3.5 text-slate-400" />
+            <Download className="w-4 h-4 text-slate-500" />
             <span>Export CSV</span>
           </button>
           <button
             type="button"
             onClick={() => setIsAddModalOpen(true)}
-            className="px-4 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold flex items-center gap-2 shadow-sm transition-all cursor-pointer"
+            className="min-h-[44px] h-[44px] px-5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-sm font-semibold flex items-center gap-2 shadow-xs transition-all cursor-pointer"
           >
             <Plus className="w-4 h-4 text-amber-400" />
             <span>Log Walk-in Intake</span>
@@ -204,28 +204,28 @@ export default function AdminEnquiriesPage() {
 
       {/* Filters & Search */}
       <div className="p-4 rounded-2xl bg-white border border-[#EAE3D7] shadow-xs flex flex-col sm:flex-row items-center justify-between gap-3">
-        <div className="relative w-full sm:w-80">
-          <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+        <div className="relative w-full sm:w-[360px]">
+          <Search className="w-5 h-5 text-slate-500 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
           <input
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search by parent, student, email, or grade..."
-            className="w-full pl-9 pr-3.5 py-1.5 rounded-xl border border-slate-200 bg-slate-50 text-xs text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:bg-white"
+            className="w-full min-h-[46px] h-[46px] pl-11 pr-4 rounded-xl border border-slate-200 bg-slate-50 text-sm text-slate-900 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:bg-white transition-all shadow-xs"
           />
         </div>
 
-        <div className="flex items-center gap-2 w-full sm:w-auto justify-end">
-          <span className="text-xs text-slate-400 font-medium">Status:</span>
+        <div className="flex items-center gap-2 w-full sm:w-auto justify-end flex-wrap">
+          <span className="text-xs font-bold text-slate-700 uppercase tracking-wider mr-1">Status:</span>
           {(["All", "New", "Read", "Resolved"] as const).map((st) => (
             <button
               key={st}
               type="button"
               onClick={() => setStatusFilter(st)}
-              className={`px-3 py-1 rounded-lg text-xs font-semibold transition-all ${
+              className={`h-[38px] px-4 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
                 statusFilter === st
-                  ? "bg-slate-900 text-white"
-                  : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                  ? "bg-slate-900 text-white shadow-xs"
+                  : "bg-slate-100 text-slate-700 hover:bg-slate-200 hover:text-slate-950"
               }`}
             >
               {st}
@@ -239,7 +239,7 @@ export default function AdminEnquiriesPage() {
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="border-b border-slate-100 bg-slate-50/70 text-[11px] font-bold uppercase tracking-wider text-slate-500">
+              <tr className="border-b border-slate-100 bg-slate-50/70 text-xs font-bold uppercase tracking-wider text-slate-700">
                 <th className="py-3.5 px-6">Applicant & Family</th>
                 <th className="py-3.5 px-6">Target Grade</th>
                 <th className="py-3.5 px-6">Contact Info</th>
@@ -249,7 +249,7 @@ export default function AdminEnquiriesPage() {
                 <th className="py-3.5 px-6 text-right">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100 text-xs">
+            <tbody className="divide-y divide-slate-100 text-xs sm:text-sm">
               {filteredEnquiries.map((enq) => (
                 <tr
                   key={enq.id}
@@ -261,39 +261,39 @@ export default function AdminEnquiriesPage() {
                   <td className="py-4 px-6">
                     <div className="font-bold text-slate-900">{enq.name}</div>
                     {enq.studentName && (
-                      <div className="text-[11px] text-slate-500 mt-0.5">
+                      <div className="text-xs text-slate-600 mt-0.5 font-medium">
                         Student: {enq.studentName}
                       </div>
                     )}
                   </td>
 
                   {/* Grade */}
-                  <td className="py-4 px-6 text-slate-700 font-medium">
+                  <td className="py-4 px-6 text-slate-900 font-semibold">
                     {enq.targetGrade || "Not specified"}
                   </td>
 
                   {/* Contact */}
                   <td className="py-4 px-6">
-                    <div className="text-slate-800 font-mono text-[11px]">{enq.phone}</div>
-                    <div className="text-slate-500 text-[11px] truncate max-w-[180px]">{enq.email}</div>
+                    <div className="text-slate-900 font-mono text-xs font-medium">{enq.phone}</div>
+                    <div className="text-slate-700 text-xs font-medium truncate max-w-[180px]">{enq.email}</div>
                   </td>
 
                   {/* Type */}
                   <td className="py-4 px-6">
-                    <span className="px-2 py-0.5 rounded-md bg-slate-100 text-slate-800 text-[11px] font-medium">
+                    <span className="px-2.5 py-1 rounded-md bg-slate-100 text-slate-800 text-xs font-semibold">
                       {enq.type}
                     </span>
                   </td>
 
                   {/* Date */}
-                  <td className="py-4 px-6 text-slate-500 font-medium whitespace-nowrap">
+                  <td className="py-4 px-6 text-slate-700 font-medium whitespace-nowrap text-xs">
                     {enq.date}
                   </td>
 
                   {/* Status */}
                   <td className="py-4 px-6">
                     <span
-                      className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold ${
+                      className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold shadow-xs ${
                         enq.status === "New"
                           ? "bg-amber-100 text-amber-900"
                           : enq.status === "Read"
@@ -310,7 +310,7 @@ export default function AdminEnquiriesPage() {
                     <button
                       type="button"
                       onClick={() => handleOpenDossier(enq)}
-                      className="px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold inline-flex items-center gap-1.5 transition-colors"
+                      className="min-h-[36px] sm:min-h-[38px] h-[36px] sm:h-[38px] px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs sm:text-sm font-semibold inline-flex items-center gap-1.5 transition-colors cursor-pointer shadow-xs"
                     >
                       <Eye className="w-3.5 h-3.5" />
                       <span>Dossier</span>
@@ -525,7 +525,7 @@ export default function AdminEnquiriesPage() {
                 value={formEmail}
                 onChange={(e) => setFormEmail(e.target.value)}
                 placeholder="parent@example.com"
-                className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900"
+                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900"
               />
             </div>
           </div>
@@ -540,7 +540,7 @@ export default function AdminEnquiriesPage() {
                 value={formGrade}
                 onChange={(e) => setFormGrade(e.target.value)}
                 placeholder="e.g. Grade 7 (Middle School)"
-                className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900"
+                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900"
               />
             </div>
 
@@ -553,7 +553,7 @@ export default function AdminEnquiriesPage() {
                 onChange={(e) =>
                   setFormType(e.target.value as AdminEnquiryItem["type"])
                 }
-                className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900 bg-white"
+                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900 bg-white"
               >
                 <option value="Admission">Admission</option>
                 <option value="Campus Visit">Campus Visit</option>
@@ -572,21 +572,21 @@ export default function AdminEnquiriesPage() {
               value={formMessage}
               onChange={(e) => setFormMessage(e.target.value)}
               placeholder="Curriculum inquiries, transport requirements, second language preferences..."
-              className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900"
+              className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900"
             />
           </div>
 
-          <div className="pt-4 border-t border-slate-100 flex items-center justify-end gap-2">
+          <div className="pt-4 border-t border-slate-100 flex items-center justify-end gap-3">
             <button
               type="button"
               onClick={() => setIsAddModalOpen(false)}
-              className="px-4 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:text-slate-900 hover:bg-slate-100 transition-colors"
+              className="min-h-[40px] h-[40px] px-4 rounded-xl text-sm font-semibold text-slate-700 hover:text-slate-950 hover:bg-slate-100 transition-colors cursor-pointer"
             >
               Cancel
             </button>
             <button
               type="submit"
-              className="px-5 py-2 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold shadow-sm transition-all"
+              className="min-h-[44px] h-[44px] px-5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-sm font-semibold shadow-xs transition-all cursor-pointer"
             >
               Save Prospect Intake
             </button>

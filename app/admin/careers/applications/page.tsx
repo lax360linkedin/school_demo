@@ -129,16 +129,16 @@ function ApplicationsDeskContent() {
           <Link
             href="/careers"
             target="_blank"
-            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-medium text-slate-600 bg-white border border-[#EAE3D7] hover:bg-slate-50 transition-colors shadow-2xs"
+            className="min-h-[44px] h-[44px] px-4 rounded-xl text-sm font-semibold text-slate-800 bg-white border border-[#EAE3D7] hover:bg-slate-50 transition-colors shadow-2xs inline-flex items-center gap-2"
           >
-            <ExternalLink className="w-3.5 h-3.5" />
+            <ExternalLink className="w-4 h-4 text-slate-500" />
             <span>View Public Careers</span>
           </Link>
           <Link
             href="/admin/careers"
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold text-slate-700 bg-white border border-[#EAE3D7] hover:bg-slate-50 transition-colors shadow-2xs"
+            className="min-h-[44px] h-[44px] px-5 rounded-xl text-sm font-semibold text-white bg-slate-900 hover:bg-slate-800 transition-colors shadow-xs inline-flex items-center gap-2 cursor-pointer"
           >
-            <BriefcaseBusiness className="w-4 h-4 text-slate-500" />
+            <BriefcaseBusiness className="w-4 h-4 text-amber-400" />
             <span>Manage Positions</span>
           </Link>
         </div>
@@ -148,9 +148,9 @@ function ApplicationsDeskContent() {
       <div className="flex border-b border-[#EAE3D7] text-sm">
         <Link
           href="/admin/careers"
-          className="px-4 py-2.5 font-medium text-slate-500 hover:text-slate-800 transition-colors flex items-center gap-2"
+          className="px-4 py-2.5 font-semibold text-slate-700 hover:text-slate-950 transition-colors flex items-center gap-2"
         >
-          <BriefcaseBusiness className="w-4 h-4 text-slate-400" />
+          <BriefcaseBusiness className="w-4 h-4 text-slate-500" />
           <span>Open Positions ({jobs.length})</span>
         </Link>
         <Link
@@ -206,14 +206,14 @@ function ApplicationsDeskContent() {
       {/* Search & Filter Toolbar */}
       <div className="bg-white p-4 rounded-2xl border border-[#EAE3D7] shadow-2xs space-y-3 sm:space-y-0 sm:flex sm:items-center sm:justify-between gap-4">
         {/* Search */}
-        <div className="relative flex-1 max-w-sm">
-          <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+        <div className="relative w-full sm:w-[360px]">
+          <Search className="w-5 h-5 text-slate-500 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
           <input
             type="text"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Search candidate name, qualification, or email..."
-            className="w-full pl-9 pr-4 py-2 bg-slate-50 border border-[#EAE3D7] rounded-xl text-xs text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900/10 focus:border-slate-800"
+            className="w-full min-h-[46px] h-[46px] pl-11 pr-4 rounded-xl border border-slate-200 bg-slate-50 text-sm text-slate-900 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:bg-white transition-all shadow-xs"
           />
         </div>
 
@@ -221,11 +221,11 @@ function ApplicationsDeskContent() {
         <div className="flex flex-wrap items-center gap-3">
           {/* Status Filter */}
           <div className="flex items-center gap-1.5">
-            <span className="text-xs text-slate-500 font-medium">Status:</span>
+            <span className="text-xs font-bold text-slate-700 uppercase tracking-wider">Status:</span>
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="px-2.5 py-1.5 bg-slate-50 border border-[#EAE3D7] rounded-xl text-xs text-slate-700 font-medium focus:outline-none focus:border-slate-800"
+              className="h-[38px] px-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm text-slate-800 font-medium focus:outline-none focus:border-slate-800 cursor-pointer"
             >
               <option value="All">All Stages</option>
               <option value="New">New</option>
@@ -238,11 +238,11 @@ function ApplicationsDeskContent() {
 
           {/* Job Filter */}
           <div className="flex items-center gap-1.5">
-            <span className="text-xs text-slate-500 font-medium">Role:</span>
+            <span className="text-xs font-bold text-slate-700 uppercase tracking-wider">Role:</span>
             <select
               value={jobFilter}
               onChange={(e) => setJobFilter(e.target.value)}
-              className="px-2.5 py-1.5 bg-slate-50 border border-[#EAE3D7] rounded-xl text-xs text-slate-700 font-medium focus:outline-none focus:border-slate-800 max-w-[200px]"
+              className="h-[38px] px-3.5 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm text-slate-800 font-medium focus:outline-none focus:border-slate-800 max-w-[200px] cursor-pointer"
             >
               <option value="All">All Positions</option>
               {jobs.map((j) => (
@@ -258,8 +258,8 @@ function ApplicationsDeskContent() {
       {/* Applications Table */}
       <div className="bg-white rounded-2xl border border-[#EAE3D7] shadow-2xs overflow-hidden">
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-xs">
-            <thead className="bg-[#FAF8F5] border-b border-[#EAE3D7] text-slate-600 font-semibold uppercase tracking-wider">
+          <table className="w-full text-left text-xs sm:text-sm">
+            <thead className="bg-[#FAF8F5] border-b border-[#EAE3D7] text-slate-700 font-bold uppercase tracking-wider text-xs">
               <tr>
                 <th className="px-5 py-3.5">Candidate Name</th>
                 <th className="px-4 py-3.5">Position</th>
@@ -273,7 +273,7 @@ function ApplicationsDeskContent() {
             <tbody className="divide-y divide-slate-100">
               {filteredApps.length === 0 ? (
                 <tr>
-                  <td colSpan={7} className="px-5 py-12 text-center text-slate-400">
+                  <td colSpan={7} className="px-5 py-12 text-center text-slate-500 font-medium">
                     No candidate applications match the filter criteria.
                   </td>
                 </tr>
@@ -282,29 +282,29 @@ function ApplicationsDeskContent() {
                   <tr key={app.id} className="hover:bg-slate-50/70 transition-colors">
                     <td className="px-5 py-4">
                       <div className="font-semibold text-slate-900">{app.fullName}</div>
-                      <div className="text-[11px] text-slate-500 flex items-center gap-2 mt-0.5">
+                      <div className="text-xs text-slate-600 flex items-center gap-2 mt-0.5 font-medium">
                         <span>{app.email}</span>
                         <span>•</span>
                         <span>{app.phone}</span>
                       </div>
                     </td>
-                    <td className="px-4 py-4 font-medium text-slate-800">
-                      <span className="px-2.5 py-1 rounded-md bg-amber-50 text-amber-900 border border-amber-200/60 font-medium">
+                    <td className="px-4 py-4 font-medium text-slate-900">
+                      <span className="px-2.5 py-1 rounded-md bg-amber-50 text-amber-900 border border-amber-200/60 font-semibold text-xs">
                         {app.position}
                       </span>
                     </td>
-                    <td className="px-4 py-4 text-slate-600 font-medium">
+                    <td className="px-4 py-4 text-slate-800 font-medium">
                       {app.highestQualification}
                     </td>
-                    <td className="px-4 py-4 text-slate-600">
+                    <td className="px-4 py-4 text-slate-800 font-medium">
                       {app.experienceYears}
                     </td>
-                    <td className="px-4 py-4 text-slate-500 font-medium">
+                    <td className="px-4 py-4 text-slate-700 font-medium text-xs">
                       {app.appliedDate}
                     </td>
                     <td className="px-4 py-4">
                       <span
-                        className={`inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-semibold ${
+                        className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold shadow-xs ${
                           app.status === "New"
                             ? "bg-amber-100 text-amber-900"
                             : app.status === "Under Review"
@@ -322,7 +322,7 @@ function ApplicationsDeskContent() {
                     <td className="px-5 py-4 text-right">
                       <button
                         onClick={() => handleOpenDossier(app)}
-                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-slate-900 text-white hover:bg-slate-800 transition-colors shadow-2xs"
+                        className="min-h-[36px] sm:min-h-[38px] h-[36px] sm:h-[38px] px-4 rounded-xl text-xs sm:text-sm font-semibold bg-slate-900 text-white hover:bg-slate-800 transition-colors shadow-xs cursor-pointer inline-flex items-center gap-2"
                       >
                         <Eye className="w-3.5 h-3.5" />
                         <span>View Dossier</span>
@@ -345,21 +345,21 @@ function ApplicationsDeskContent() {
         width="xl"
         footer={
           <div className="flex items-center justify-between gap-3 w-full">
-            <div className="text-xs text-slate-500">
-              Current Stage: <span className="font-semibold text-slate-800">{newStatus}</span>
+            <div className="text-xs text-slate-700 font-medium">
+              Current Stage: <span className="font-bold text-slate-950">{newStatus}</span>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
               <button
                 type="button"
                 onClick={() => setIsDrawerOpen(false)}
-                className="px-4 py-2 text-xs font-medium text-slate-600 hover:bg-slate-100 rounded-xl transition-colors"
+                className="min-h-[40px] h-[40px] px-4 text-sm font-semibold text-slate-700 hover:text-slate-950 hover:bg-slate-100 rounded-xl transition-colors cursor-pointer"
               >
                 Close
               </button>
               <button
                 type="button"
                 onClick={handleSaveReview}
-                className="px-5 py-2 text-xs font-semibold bg-slate-900 text-white hover:bg-slate-800 rounded-xl transition-colors shadow-xs"
+                className="min-h-[44px] h-[44px] px-5 text-sm font-semibold bg-slate-900 text-white hover:bg-slate-800 rounded-xl transition-colors shadow-xs cursor-pointer"
               >
                 Save Review Changes
               </button>

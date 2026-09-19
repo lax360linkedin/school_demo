@@ -87,15 +87,15 @@ export default function AdminPrivacyRequestsPage() {
       {/* Top Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-2">
         <div>
-          <div className="flex items-center gap-2 text-xs font-semibold text-slate-500 mb-1">
+          <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 mb-1">
             <span>DPDP Governance</span>
-            <ChevronRight className="w-3.5 h-3.5 text-slate-300" />
-            <span className="text-slate-800">Citizen Data Requests</span>
+            <ChevronRight className="w-3.5 h-3.5 text-slate-400" />
+            <span className="text-slate-900 font-bold">Citizen Data Requests</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 font-serif">
             Data Rights & Grievance Desk
           </h2>
-          <p className="mt-1 text-sm text-slate-500">
+          <p className="mt-1 text-sm text-slate-700">
             Process citizen requests submitted under India&apos;s Digital Personal Data Protection Act (DPDP Act, 2023).
           </p>
         </div>
@@ -105,7 +105,7 @@ export default function AdminPrivacyRequestsPage() {
             href="/privacy"
             target="_blank"
             rel="noreferrer"
-            className="px-4 py-2.5 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 text-slate-800 text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 shadow-xs"
+            className="min-h-[44px] h-[44px] px-4 rounded-xl border border-slate-300 bg-white hover:bg-slate-50 text-slate-800 text-sm font-semibold transition-all flex items-center gap-2 shadow-xs cursor-pointer"
           >
             <ExternalLink className="w-4 h-4 text-slate-500" />
             <span>Public Privacy Notice</span>
@@ -147,24 +147,24 @@ export default function AdminPrivacyRequestsPage() {
 
       {/* Filter and Search Bar */}
       <div className="p-4 sm:p-5 rounded-2xl bg-white border border-[#EAE3D7] shadow-xs flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
-        <div className="relative flex-1 max-w-md">
-          <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+        <div className="relative w-full sm:w-[360px]">
+          <Search className="w-5 h-5 text-slate-500 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
           <input
             type="text"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Search by parent name, email, or request summary..."
-            className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50/70 text-xs sm:text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:bg-white transition-all"
+            className="w-full min-h-[46px] h-[46px] pl-11 pr-4 rounded-xl border border-slate-200 bg-slate-50 text-sm text-slate-900 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:bg-white transition-all shadow-xs"
           />
         </div>
 
         <div className="flex flex-wrap items-center gap-3">
           <div className="flex items-center gap-2">
-            <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Status:</span>
+            <span className="text-xs font-bold text-slate-700 uppercase tracking-wider">Status:</span>
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="px-3 py-2 rounded-xl border border-slate-200 bg-white text-xs sm:text-sm font-medium text-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-900 cursor-pointer"
+              className="h-[38px] px-3.5 rounded-xl border border-slate-200 bg-white text-xs sm:text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900 cursor-pointer"
             >
               <option value="All">All Statuses ({requests.length})</option>
               <option value="Pending">Pending ({pendingCount})</option>
@@ -175,79 +175,83 @@ export default function AdminPrivacyRequestsPage() {
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">Request Type:</span>
+            <span className="text-xs font-bold text-slate-700 uppercase tracking-wider">Request Type:</span>
             <select
               value={typeFilter}
               onChange={(e) => setTypeFilter(e.target.value)}
-              className="px-3 py-2 rounded-xl border border-slate-200 bg-white text-xs sm:text-sm font-medium text-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-900 cursor-pointer max-w-[200px] truncate"
+              className="h-[38px] px-3.5 rounded-xl border border-slate-200 bg-white text-xs sm:text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-slate-900 cursor-pointer"
             >
-              <option value="All">All Categories</option>
-              <option value="Access my personal data">Access personal data</option>
-              <option value="Correction / Update details">Correction / Update</option>
-              <option value="Erasure / Deletion of data">Erasure / Deletion</option>
-              <option value="Withdrawal of consent">Withdrawal of consent</option>
-              <option value="Grievance / Question">Grievance / Question</option>
+              <option value="All">All Types</option>
+              <option value="Access / Summary of Data">Access / Summary of Data</option>
+              <option value="Correction / Updation of Record">Correction / Updation</option>
+              <option value="Erasure / Deletion of Personal Data">Erasure / Deletion</option>
+              <option value="Grievance / DPO Complaint">Grievance / Complaint</option>
             </select>
           </div>
         </div>
       </div>
 
-      {/* Requests Table */}
-      <div className="bg-white rounded-2xl border border-[#EAE3D7] shadow-xs overflow-hidden">
+      {/* Table of Requests */}
+      <div className="rounded-2xl bg-white border border-[#EAE3D7] overflow-hidden shadow-xs">
         <div className="overflow-x-auto">
-          <table className="w-full text-left border-collapse text-xs sm:text-sm">
+          <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="bg-slate-50/90 border-b border-slate-200 text-slate-700 font-bold uppercase tracking-wider text-[11px]">
-                <th className="p-4 pl-6">Data Subject / Guardian</th>
-                <th className="p-4">Requested Action</th>
-                <th className="p-4">Request Summary</th>
-                <th className="p-4">Date Filed</th>
+              <tr className="border-b border-slate-100 bg-slate-50/70 text-xs font-bold uppercase tracking-wider text-slate-700">
+                <th className="p-4 pl-6">Token / Identity</th>
+                <th className="p-4">Classification</th>
+                <th className="p-4">Submitted</th>
                 <th className="p-4 text-center">Status</th>
-                <th className="p-4 text-right pr-6">Review</th>
+                <th className="p-4 pr-6 text-right">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100 text-slate-600">
+            <tbody className="divide-y divide-slate-100 text-xs sm:text-sm">
               {filteredRequests.length === 0 ? (
                 <tr>
-                  <td colSpan={6} className="p-12 text-center text-slate-400">
-                    <ShieldAlert className="w-8 h-8 mx-auto text-slate-300 mb-2" />
-                    <p className="font-semibold text-slate-600">No data rights requests found.</p>
-                    <p className="text-xs mt-1">Adjust filters or submit a demo request via the public /privacy portal.</p>
+                  <td colSpan={5} className="p-8 text-center text-slate-500 font-medium">
+                    No citizen requests found matching the current search parameters.
                   </td>
                 </tr>
               ) : (
                 filteredRequests.map((req) => (
-                  <tr key={req.id} className="hover:bg-slate-50/80 transition-colors">
+                  <tr
+                    key={req.id}
+                    className={`hover:bg-slate-50/60 transition-colors ${
+                      req.status === "Pending" ? "bg-amber-50/20" : ""
+                    }`}
+                  >
                     <td className="p-4 pl-6">
-                      <p className="font-bold text-slate-900 text-sm">{req.name}</p>
-                      <p className="text-xs text-slate-500 flex items-center gap-1.5 mt-0.5">
-                        <Mail className="w-3 h-3 text-slate-400" />
-                        <span>{req.email}</span>
-                      </p>
-                      <span className="text-[11px] text-slate-400 font-mono mt-1 block">
-                        ID: {req.id}
-                      </span>
+                      <div className="flex items-center gap-2">
+                        <span className="font-mono text-xs font-bold text-slate-950">
+                          {req.id}
+                        </span>
+                        {req.verifiedParent && (
+                          <span
+                            title="Verified Identity"
+                            className="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-800 bg-emerald-50 px-1.5 py-0.5 rounded-sm"
+                          >
+                            <UserCheck className="w-3 h-3" />
+                            Verified
+                          </span>
+                        )}
+                      </div>
+                      <p className="font-semibold text-slate-900 mt-1">{req.name}</p>
+                      <p className="text-xs text-slate-600 font-medium">{req.email}</p>
                     </td>
 
                     <td className="p-4">
-                      <span className="px-2.5 py-1 rounded-md bg-amber-50 text-amber-900 text-xs font-semibold border border-amber-200/60 inline-block">
-                        {req.requestType}
-                      </span>
-                    </td>
-
-                    <td className="p-4 max-w-sm">
-                      <p className="text-xs text-slate-700 line-clamp-2 leading-relaxed">
+                      <span className="font-semibold text-slate-900 block">{req.requestType}</span>
+                      <p className="text-xs text-slate-700 italic line-clamp-2 max-w-sm mt-0.5">
                         &ldquo;{req.message}&rdquo;
                       </p>
                     </td>
 
-                    <td className="p-4 whitespace-nowrap text-xs text-slate-500">
+                    <td className="p-4 whitespace-nowrap text-xs text-slate-700 font-medium">
                       {req.submittedDate}
                     </td>
 
                     <td className="p-4 text-center">
                       <span
-                        className={`inline-block px-3 py-1 rounded-full text-xs font-bold ${
+                        className={`inline-block px-3 py-1 rounded-full text-xs font-bold shadow-xs ${
                           req.status === "Pending"
                             ? "bg-amber-100 text-amber-900"
                             : req.status === "In Review"
@@ -264,7 +268,7 @@ export default function AdminPrivacyRequestsPage() {
                     <td className="p-4 text-right pr-6 whitespace-nowrap">
                       <button
                         onClick={() => handleOpenDrawer(req)}
-                        className="px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold transition-colors cursor-pointer shadow-xs"
+                        className="min-h-[36px] sm:min-h-[38px] h-[36px] sm:h-[38px] px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs sm:text-sm font-semibold transition-colors cursor-pointer shadow-xs"
                       >
                         Review Request
                       </button>
@@ -288,13 +292,13 @@ export default function AdminPrivacyRequestsPage() {
           <div className="flex items-center justify-between gap-4">
             <button
               onClick={() => setIsDrawerOpen(false)}
-              className="px-4 py-2 rounded-xl text-xs sm:text-sm text-slate-600 hover:bg-slate-200/60 font-semibold transition-colors"
+              className="min-h-[40px] h-[40px] px-4 rounded-xl text-sm text-slate-700 hover:text-slate-950 hover:bg-slate-100 font-semibold transition-colors cursor-pointer"
             >
               Close
             </button>
             <button
               onClick={handleSaveStatus}
-              className="px-5 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs sm:text-sm font-semibold transition-colors shadow-sm cursor-pointer"
+              className="min-h-[44px] h-[44px] px-5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-sm font-semibold transition-colors shadow-xs cursor-pointer"
             >
               Update Resolution & Save
             </button>

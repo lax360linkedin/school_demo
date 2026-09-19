@@ -210,6 +210,7 @@ export interface AdminPrivacyRequest {
   submittedDate: string;
   status: "Pending" | "In Review" | "Resolved" | "Fulfilled" | "Rejected";
   notes?: string;
+  verifiedParent?: boolean;
 }
 
 export interface AdminConsentRecord {

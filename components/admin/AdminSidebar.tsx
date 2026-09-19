@@ -19,11 +19,12 @@ import {
   ShieldAlert,
   FileCheck,
   Cookie,
-  Sliders,
+  BarChart3,
   ExternalLink,
   LogOut,
   X,
   ShieldCheck,
+  Sliders,
 } from "lucide-react";
 import { AdminAuth } from "@/lib/adminStorage";
 
@@ -35,9 +36,9 @@ interface AdminSidebarProps {
 
 const mainNavItems = [
   { href: "/admin/dashboard", label: "Overview", icon: LayoutDashboard },
+  { href: "/admin/analytics", label: "Analytics", icon: BarChart3 },
   { href: "/admin/programs", label: "Programs", icon: BookOpen },
   { href: "/admin/campus-life", label: "Campus Life", icon: Compass },
-  { href: "/admin/student-life", label: "Student Life", icon: Users },
   { href: "/admin/facilities", label: "Facilities", icon: Building2 },
   { href: "/admin/events", label: "Events & Calendar", icon: Calendar },
   { href: "/admin/gallery", label: "Campus Gallery", icon: ImageIcon },
@@ -88,7 +89,7 @@ export default function AdminSidebar({
                   Admin
                 </span>
               </div>
-              <p className="text-xs text-slate-500 font-medium">Administration Portal</p>
+              <p className="text-xs text-slate-700 font-medium">Administration Portal</p>
             </div>
           </div>
 
@@ -108,7 +109,7 @@ export default function AdminSidebar({
       {/* Navigation List */}
       <nav className="flex-1 overflow-y-auto px-4 py-5 space-y-5">
         <div>
-          <p className="px-3 pb-2.5 text-xs font-bold uppercase tracking-wider text-slate-400">
+          <p className="px-3 pb-2.5 text-xs font-bold uppercase tracking-wider text-slate-600">
             Management
           </p>
 
@@ -125,13 +126,13 @@ export default function AdminSidebar({
                   className={`flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm transition-all duration-150 group ${
                     isActive
                       ? "bg-slate-900 text-white font-semibold shadow-sm shadow-slate-900/10"
-                      : "text-slate-600 hover:text-slate-900 hover:bg-slate-100/70 font-medium"
+                      : "text-slate-700 hover:text-slate-950 hover:bg-slate-100 font-semibold"
                   }`}
                 >
                   <div className="flex items-center gap-3 min-w-0">
                     <Icon
                       className={`w-4 h-4 shrink-0 transition-colors ${
-                        isActive ? "text-amber-400" : "text-slate-400 group-hover:text-slate-700"
+                        isActive ? "text-amber-400" : "text-slate-500 group-hover:text-slate-900"
                       }`}
                     />
                     <span className="truncate">{item.label}</span>
@@ -156,7 +157,7 @@ export default function AdminSidebar({
 
         {/* Privacy & DPDP Section */}
         <div>
-          <p className="px-3 pb-2.5 text-xs font-bold uppercase tracking-wider text-slate-400">
+          <p className="px-3 pb-2.5 text-xs font-bold uppercase tracking-wider text-slate-600">
             Privacy & Governance
           </p>
 
@@ -173,13 +174,13 @@ export default function AdminSidebar({
                   className={`flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm transition-all duration-150 group ${
                     isActive
                       ? "bg-slate-900 text-white font-semibold shadow-sm shadow-slate-900/10"
-                      : "text-slate-600 hover:text-slate-900 hover:bg-slate-100/70 font-medium"
+                      : "text-slate-700 hover:text-slate-950 hover:bg-slate-100 font-semibold"
                   }`}
                 >
                   <div className="flex items-center gap-3 min-w-0">
                     <Icon
                       className={`w-4 h-4 shrink-0 transition-colors ${
-                        isActive ? "text-amber-400" : "text-slate-400 group-hover:text-slate-700"
+                        isActive ? "text-amber-400" : "text-slate-500 group-hover:text-slate-900"
                       }`}
                     />
                     <span className="truncate">{item.label}</span>
@@ -192,7 +193,7 @@ export default function AdminSidebar({
 
         {/* Settings & Public Link */}
         <div className="pt-2 border-t border-slate-100">
-          <p className="px-3 pb-2 text-xs font-bold uppercase tracking-wider text-slate-400">
+          <p className="px-3 pb-2 text-xs font-bold uppercase tracking-wider text-slate-600">
             System
           </p>
 

@@ -117,7 +117,7 @@ export default function AdminSettingsPage() {
         <h2 className="text-xl font-bold text-slate-900 tracking-tight">
           Portal & Institutional Configuration
         </h2>
-        <p className="text-xs text-slate-500 mt-0.5">
+        <p className="text-sm text-slate-700 mt-1">
           Configure school identity, admissions hotlines, WhatsApp numbers, and global accreditations
         </p>
       </div>
@@ -126,8 +126,8 @@ export default function AdminSettingsPage() {
         {/* Section 1: School Identity */}
         <div className="p-6 rounded-2xl bg-white border border-[#EAE3D7] shadow-xs space-y-4">
           <div className="flex items-center gap-2 pb-3 border-b border-slate-100">
-            <Building className="w-4 h-4 text-slate-900" />
-            <h3 className="text-sm font-bold text-slate-900">Institutional Identity</h3>
+            <Building className="w-5 h-5 text-slate-900" />
+            <h3 className="text-base font-bold text-slate-900">Institutional Identity</h3>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -140,7 +140,7 @@ export default function AdminSettingsPage() {
                 required
                 value={schoolName}
                 onChange={(e) => setSchoolName(e.target.value)}
-                className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900"
+                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900"
               />
             </div>
 
@@ -152,7 +152,7 @@ export default function AdminSettingsPage() {
                 type="number"
                 value={established}
                 onChange={(e) => setEstablished(Number(e.target.value))}
-                className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900"
+                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900"
               />
             </div>
           </div>
@@ -165,7 +165,7 @@ export default function AdminSettingsPage() {
               type="text"
               value={tagline}
               onChange={(e) => setTagline(e.target.value)}
-              className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900"
+              className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900"
             />
           </div>
 
@@ -177,7 +177,7 @@ export default function AdminSettingsPage() {
               type="text"
               value={address}
               onChange={(e) => setAddress(e.target.value)}
-              className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900"
+              className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900"
             />
           </div>
 
@@ -189,7 +189,7 @@ export default function AdminSettingsPage() {
               type="text"
               value={curriculum}
               onChange={(e) => setCurriculum(e.target.value)}
-              className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900"
+              className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900"
             />
           </div>
         </div>
@@ -197,8 +197,8 @@ export default function AdminSettingsPage() {
         {/* Section 2: Admissions & Communication Channels */}
         <div className="p-6 rounded-2xl bg-white border border-[#EAE3D7] shadow-xs space-y-4">
           <div className="flex items-center gap-2 pb-3 border-b border-slate-100">
-            <Phone className="w-4 h-4 text-slate-900" />
-            <h3 className="text-sm font-bold text-slate-900">Communication & Admissions Lines</h3>
+            <Phone className="w-5 h-5 text-slate-900" />
+            <h3 className="text-base font-bold text-slate-900">Communication & Admissions Lines</h3>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -210,7 +210,7 @@ export default function AdminSettingsPage() {
                 type="text"
                 value={admissionsPhone}
                 onChange={(e) => setAdmissionsPhone(e.target.value)}
-                className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900 font-mono"
+                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900 font-mono"
               />
             </div>
 
@@ -222,7 +222,7 @@ export default function AdminSettingsPage() {
                 type="text"
                 value={generalPhone}
                 onChange={(e) => setGeneralPhone(e.target.value)}
-                className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900 font-mono"
+                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900 font-mono"
               />
             </div>
           </div>
@@ -236,7 +236,7 @@ export default function AdminSettingsPage() {
                 type="email"
                 value={admissionsEmail}
                 onChange={(e) => setAdmissionsEmail(e.target.value)}
-                className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900"
+                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900"
               />
             </div>
 
@@ -248,7 +248,7 @@ export default function AdminSettingsPage() {
                 type="email"
                 value={generalEmail}
                 onChange={(e) => setGeneralEmail(e.target.value)}
-                className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900"
+                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900"
               />
             </div>
           </div>
@@ -262,7 +262,7 @@ export default function AdminSettingsPage() {
                 type="text"
                 value={whatsApp}
                 onChange={(e) => setWhatsApp(e.target.value)}
-                className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900 font-mono"
+                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900 font-mono"
               />
             </div>
 
@@ -274,7 +274,7 @@ export default function AdminSettingsPage() {
                 type="text"
                 value={hours}
                 onChange={(e) => setHours(e.target.value)}
-                className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900"
+                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900"
               />
             </div>
           </div>
@@ -283,8 +283,8 @@ export default function AdminSettingsPage() {
         {/* Section 3: Social & Online Handles */}
         <div className="p-6 rounded-2xl bg-white border border-[#EAE3D7] shadow-xs space-y-4">
           <div className="flex items-center gap-2 pb-3 border-b border-slate-100">
-            <Globe className="w-4 h-4 text-slate-900" />
-            <h3 className="text-sm font-bold text-slate-900">Social Media Handles</h3>
+            <Globe className="w-5 h-5 text-slate-900" />
+            <h3 className="text-base font-bold text-slate-900">Social Media Handles</h3>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -296,7 +296,7 @@ export default function AdminSettingsPage() {
                 type="url"
                 value={instagram}
                 onChange={(e) => setInstagram(e.target.value)}
-                className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900"
+                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900"
               />
             </div>
 
@@ -308,7 +308,7 @@ export default function AdminSettingsPage() {
                 type="url"
                 value={facebook}
                 onChange={(e) => setFacebook(e.target.value)}
-                className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900"
+                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900"
               />
             </div>
 
@@ -320,7 +320,7 @@ export default function AdminSettingsPage() {
                 type="url"
                 value={youtube}
                 onChange={(e) => setYoutube(e.target.value)}
-                className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900"
+                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900"
               />
             </div>
 
@@ -332,7 +332,7 @@ export default function AdminSettingsPage() {
                 type="url"
                 value={linkedin}
                 onChange={(e) => setLinkedin(e.target.value)}
-                className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900"
+                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-slate-900"
               />
             </div>
           </div>
@@ -343,15 +343,15 @@ export default function AdminSettingsPage() {
           <button
             type="button"
             onClick={handleFactoryReset}
-            className="px-4 py-2.5 rounded-xl border border-rose-200 bg-white hover:bg-rose-50 text-rose-600 text-xs font-semibold flex items-center gap-2 transition-colors w-full sm:w-auto justify-center"
+            className="min-h-[44px] h-[44px] px-5 rounded-xl border border-rose-200 bg-white hover:bg-rose-50 text-rose-700 text-sm font-semibold flex items-center gap-2 transition-colors w-full sm:w-auto justify-center cursor-pointer shadow-xs"
           >
-            <RotateCcw className="w-3.5 h-3.5" />
+            <RotateCcw className="w-4 h-4" />
             <span>Reset Demo Data to Defaults</span>
           </button>
 
           <button
             type="submit"
-            className="px-6 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold flex items-center gap-2 shadow-sm transition-all w-full sm:w-auto justify-center"
+            className="min-h-[44px] h-[44px] px-6 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-sm font-semibold flex items-center gap-2 shadow-xs transition-all w-full sm:w-auto justify-center cursor-pointer"
           >
             <Save className="w-4 h-4 text-amber-400" />
             <span>Save Settings</span>
