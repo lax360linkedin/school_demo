@@ -258,16 +258,16 @@ function ApplicationsDeskContent() {
       {/* Applications Table */}
       <div className="bg-white rounded-2xl border border-[#EAE3D7] shadow-2xs overflow-hidden">
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-xs sm:text-sm">
+          <table className="w-full min-w-[960px] text-left text-xs sm:text-sm border-collapse">
             <thead className="bg-[#FAF8F5] border-b border-[#EAE3D7] text-slate-700 font-bold uppercase tracking-wider text-xs">
               <tr>
-                <th className="px-5 py-3.5">Candidate Name</th>
-                <th className="px-4 py-3.5">Position</th>
-                <th className="px-4 py-3.5">Highest Qualification</th>
-                <th className="px-4 py-3.5">Experience</th>
-                <th className="px-4 py-3.5">Submitted Date</th>
-                <th className="px-4 py-3.5">Status</th>
-                <th className="px-5 py-3.5 text-right">Actions</th>
+                <th className="px-5 py-3.5 align-middle w-[22%] min-w-[190px]">Candidate Name</th>
+                <th className="px-4 py-3.5 align-middle w-[17%] min-w-[170px]">Position</th>
+                <th className="px-4 py-3.5 align-middle w-[21%] min-w-[180px]">Highest Qualification</th>
+                <th className="px-4 py-3.5 align-middle w-[9%] min-w-[90px] whitespace-nowrap">Experience</th>
+                <th className="px-4 py-3.5 align-middle w-[10%] min-w-[110px] whitespace-nowrap">Submitted Date</th>
+                <th className="px-4 py-3.5 align-middle w-[9%] min-w-[105px] whitespace-nowrap">Status</th>
+                <th className="px-5 py-3.5 align-middle text-right w-[12%] min-w-[130px] whitespace-nowrap">Actions</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100">
@@ -280,31 +280,31 @@ function ApplicationsDeskContent() {
               ) : (
                 filteredApps.map((app) => (
                   <tr key={app.id} className="hover:bg-slate-50/70 transition-colors">
-                    <td className="px-5 py-4">
-                      <div className="font-semibold text-slate-900">{app.fullName}</div>
-                      <div className="text-xs text-slate-600 flex items-center gap-2 mt-0.5 font-medium">
+                    <td className="px-5 py-4 align-middle">
+                      <div className="font-semibold text-slate-900 text-sm">{app.fullName}</div>
+                      <div className="text-xs text-slate-600 flex items-center gap-2 mt-0.5 font-medium flex-wrap">
                         <span>{app.email}</span>
-                        <span>•</span>
-                        <span>{app.phone}</span>
+                        <span className="text-slate-400">•</span>
+                        <span className="whitespace-nowrap">{app.phone}</span>
                       </div>
                     </td>
-                    <td className="px-4 py-4 font-medium text-slate-900">
-                      <span className="px-2.5 py-1 rounded-md bg-amber-50 text-amber-900 border border-amber-200/60 font-semibold text-xs">
+                    <td className="px-4 py-4 align-middle">
+                      <span className="inline-block px-3 py-1 rounded-md bg-amber-50 text-amber-900 border border-amber-200/70 font-semibold text-xs whitespace-nowrap">
                         {app.position}
                       </span>
                     </td>
-                    <td className="px-4 py-4 text-slate-800 font-medium">
+                    <td className="px-4 py-4 align-middle text-slate-800 font-medium leading-snug">
                       {app.highestQualification}
                     </td>
-                    <td className="px-4 py-4 text-slate-800 font-medium">
+                    <td className="px-4 py-4 align-middle text-slate-800 font-medium whitespace-nowrap">
                       {app.experienceYears}
                     </td>
-                    <td className="px-4 py-4 text-slate-700 font-medium text-xs">
+                    <td className="px-4 py-4 align-middle text-slate-700 font-medium text-xs whitespace-nowrap">
                       {app.appliedDate}
                     </td>
-                    <td className="px-4 py-4">
+                    <td className="px-4 py-4 align-middle whitespace-nowrap">
                       <span
-                        className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold shadow-xs ${
+                        className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold shadow-xs ${
                           app.status === "New"
                             ? "bg-amber-100 text-amber-900"
                             : app.status === "Under Review"
@@ -319,12 +319,12 @@ function ApplicationsDeskContent() {
                         {app.status}
                       </span>
                     </td>
-                    <td className="px-5 py-4 text-right">
+                    <td className="px-5 py-4 align-middle text-right whitespace-nowrap">
                       <button
                         onClick={() => handleOpenDossier(app)}
-                        className="min-h-[36px] sm:min-h-[38px] h-[36px] sm:h-[38px] px-4 rounded-xl text-xs sm:text-sm font-semibold bg-slate-900 text-white hover:bg-slate-800 transition-colors shadow-xs cursor-pointer inline-flex items-center gap-2"
+                        className="min-h-[38px] h-[38px] px-3.5 sm:px-4 rounded-xl text-xs sm:text-sm font-semibold bg-slate-900 text-white hover:bg-slate-800 transition-colors shadow-xs cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap min-w-[120px]"
                       >
-                        <Eye className="w-3.5 h-3.5" />
+                        <Eye className="w-3.5 h-3.5 text-amber-400 shrink-0" />
                         <span>View Dossier</span>
                       </button>
                     </td>

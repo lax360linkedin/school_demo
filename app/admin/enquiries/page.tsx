@@ -237,19 +237,19 @@ export default function AdminEnquiriesPage() {
       {/* Enquiries Data Table */}
       <div className="rounded-2xl bg-white border border-[#EAE3D7] overflow-hidden shadow-xs">
         <div className="overflow-x-auto">
-          <table className="w-full text-left border-collapse">
+          <table className="w-full min-w-[920px] text-left border-collapse text-xs sm:text-sm">
             <thead>
               <tr className="border-b border-slate-100 bg-slate-50/70 text-xs font-bold uppercase tracking-wider text-slate-700">
-                <th className="py-3.5 px-6">Applicant & Family</th>
-                <th className="py-3.5 px-6">Target Grade</th>
-                <th className="py-3.5 px-6">Contact Info</th>
-                <th className="py-3.5 px-6">Type</th>
-                <th className="py-3.5 px-6">Date</th>
-                <th className="py-3.5 px-6">Status</th>
-                <th className="py-3.5 px-6 text-right">Actions</th>
+                <th className="py-3.5 px-5 sm:px-6 align-middle w-[24%] min-w-[210px]">Applicant & Family</th>
+                <th className="py-3.5 px-5 sm:px-6 align-middle w-[13%] min-w-[120px] whitespace-nowrap">Target Grade</th>
+                <th className="py-3.5 px-5 sm:px-6 align-middle w-[20%] min-w-[180px]">Contact Info</th>
+                <th className="py-3.5 px-5 sm:px-6 align-middle w-[11%] min-w-[100px] whitespace-nowrap">Type</th>
+                <th className="py-3.5 px-5 sm:px-6 align-middle w-[10%] min-w-[105px] whitespace-nowrap">Date</th>
+                <th className="py-3.5 px-5 sm:px-6 align-middle w-[9%] min-w-[95px] whitespace-nowrap">Status</th>
+                <th className="py-3.5 px-5 sm:px-6 align-middle text-right w-[13%] min-w-[120px] whitespace-nowrap">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100 text-xs sm:text-sm">
+            <tbody className="divide-y divide-slate-100">
               {filteredEnquiries.map((enq) => (
                 <tr
                   key={enq.id}
@@ -258,8 +258,8 @@ export default function AdminEnquiriesPage() {
                   }`}
                 >
                   {/* Name */}
-                  <td className="py-4 px-6">
-                    <div className="font-bold text-slate-900">{enq.name}</div>
+                  <td className="py-4 px-5 sm:px-6 align-middle">
+                    <div className="font-bold text-slate-900 text-sm">{enq.name}</div>
                     {enq.studentName && (
                       <div className="text-xs text-slate-600 mt-0.5 font-medium">
                         Student: {enq.studentName}
@@ -268,32 +268,32 @@ export default function AdminEnquiriesPage() {
                   </td>
 
                   {/* Grade */}
-                  <td className="py-4 px-6 text-slate-900 font-semibold">
+                  <td className="py-4 px-5 sm:px-6 align-middle text-slate-900 font-semibold whitespace-nowrap">
                     {enq.targetGrade || "Not specified"}
                   </td>
 
                   {/* Contact */}
-                  <td className="py-4 px-6">
-                    <div className="text-slate-900 font-mono text-xs font-medium">{enq.phone}</div>
-                    <div className="text-slate-700 text-xs font-medium truncate max-w-[180px]">{enq.email}</div>
+                  <td className="py-4 px-5 sm:px-6 align-middle">
+                    <div className="text-slate-900 font-mono text-xs font-semibold">{enq.phone}</div>
+                    <div className="text-slate-700 text-xs font-medium truncate max-w-[200px] mt-0.5">{enq.email}</div>
                   </td>
 
                   {/* Type */}
-                  <td className="py-4 px-6">
+                  <td className="py-4 px-5 sm:px-6 align-middle whitespace-nowrap">
                     <span className="px-2.5 py-1 rounded-md bg-slate-100 text-slate-800 text-xs font-semibold">
                       {enq.type}
                     </span>
                   </td>
 
                   {/* Date */}
-                  <td className="py-4 px-6 text-slate-700 font-medium whitespace-nowrap text-xs">
+                  <td className="py-4 px-5 sm:px-6 align-middle text-slate-700 font-medium whitespace-nowrap text-xs">
                     {enq.date}
                   </td>
 
                   {/* Status */}
-                  <td className="py-4 px-6">
+                  <td className="py-4 px-5 sm:px-6 align-middle whitespace-nowrap">
                     <span
-                      className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold shadow-xs ${
+                      className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold shadow-xs ${
                         enq.status === "New"
                           ? "bg-amber-100 text-amber-900"
                           : enq.status === "Read"
@@ -306,13 +306,13 @@ export default function AdminEnquiriesPage() {
                   </td>
 
                   {/* Action */}
-                  <td className="py-4 px-6 text-right whitespace-nowrap">
+                  <td className="py-4 px-5 sm:px-6 align-middle text-right whitespace-nowrap">
                     <button
                       type="button"
                       onClick={() => handleOpenDossier(enq)}
-                      className="min-h-[36px] sm:min-h-[38px] h-[36px] sm:h-[38px] px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs sm:text-sm font-semibold inline-flex items-center gap-1.5 transition-colors cursor-pointer shadow-xs"
+                      className="min-h-[38px] h-[38px] px-3.5 sm:px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs sm:text-sm font-semibold inline-flex items-center justify-center gap-1.5 transition-colors cursor-pointer shadow-xs whitespace-nowrap min-w-[105px]"
                     >
-                      <Eye className="w-3.5 h-3.5" />
+                      <Eye className="w-3.5 h-3.5 text-amber-400 shrink-0" />
                       <span>Dossier</span>
                     </button>
                   </td>

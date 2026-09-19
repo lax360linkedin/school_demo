@@ -196,18 +196,18 @@ export default function AdminPrivacyConsentsPage() {
       {/* Consents Table */}
       <div className="bg-white rounded-2xl border border-[#EAE3D7] shadow-xs overflow-hidden">
         <div className="overflow-x-auto">
-          <table className="w-full text-left border-collapse text-xs sm:text-sm">
+          <table className="w-full min-w-[880px] text-left border-collapse text-xs sm:text-sm">
             <thead>
               <tr className="bg-slate-50/90 border-b border-slate-100 text-slate-700 font-bold uppercase tracking-wider text-xs">
-                <th className="p-4 pl-6">Consent Event ID & Date</th>
-                <th className="p-4">Data Principal / Subject</th>
-                <th className="p-4">Consent Category</th>
-                <th className="p-4">Channel / Form</th>
-                <th className="p-4 text-center">Status</th>
-                <th className="p-4 text-right pr-6">Legal Record</th>
+                <th className="py-3.5 px-5 sm:px-6 align-middle w-[24%] min-w-[210px]">Consent Event ID & Date</th>
+                <th className="py-3.5 px-4 align-middle w-[24%] min-w-[210px]">Data Principal / Subject</th>
+                <th className="py-3.5 px-4 align-middle w-[16%] min-w-[140px] whitespace-nowrap">Consent Category</th>
+                <th className="py-3.5 px-4 align-middle w-[18%] min-w-[160px]">Channel / Form</th>
+                <th className="py-3.5 px-4 align-middle text-center w-[10%] min-w-[100px] whitespace-nowrap">Status</th>
+                <th className="py-3.5 px-5 sm:px-6 align-middle text-right w-[8%] min-w-[80px] whitespace-nowrap">Legal Record</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100 text-xs sm:text-sm">
+            <tbody className="divide-y divide-slate-100">
               {filteredConsents.length === 0 ? (
                 <tr>
                   <td colSpan={6} className="p-12 text-center text-slate-500 font-medium">
@@ -218,12 +218,12 @@ export default function AdminPrivacyConsentsPage() {
               ) : (
                 filteredConsents.map((item) => (
                   <tr key={item.id} className="hover:bg-slate-50/80 transition-colors">
-                    <td className="p-4 pl-6">
+                    <td className="py-4 px-5 sm:px-6 align-middle">
                       <p className="font-mono font-bold text-slate-950 text-xs">{item.id}</p>
                       <p className="text-xs text-slate-600 mt-0.5 font-medium">{item.timestamp || item.date}</p>
                     </td>
 
-                    <td className="p-4">
+                    <td className="py-4 px-4 align-middle">
                       <p className="font-bold text-slate-900 text-sm">
                         {item.subjectName || item.user || "School Visitor"}
                       </p>
@@ -232,33 +232,33 @@ export default function AdminPrivacyConsentsPage() {
                       </p>
                     </td>
 
-                    <td className="p-4">
+                    <td className="py-4 px-4 align-middle whitespace-nowrap">
                       <span className="px-2.5 py-1 rounded-md bg-slate-100 text-slate-800 text-xs font-semibold">
                         {item.consentType || item.purpose}
                       </span>
                     </td>
 
-                    <td className="p-4 text-xs text-slate-700">
+                    <td className="py-4 px-4 align-middle text-xs text-slate-700">
                       <p className="font-semibold text-slate-900">{item.channel || "Web Form"}</p>
                       <span className="text-xs text-slate-600 font-mono font-medium">
                         IP: {item.ipAddress || "103.117.xxx.xxx (Anonymized)"}
                       </span>
                     </td>
 
-                    <td className="p-4 text-center">
-                      <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 text-xs font-bold border border-emerald-200/60 shadow-xs">
+                    <td className="py-4 px-4 align-middle text-center whitespace-nowrap">
+                      <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-bold border border-emerald-200/60 shadow-xs">
                         <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
                         {item.consent || "Granted"}
                       </span>
                     </td>
 
-                    <td className="p-4 text-right pr-6 whitespace-nowrap">
+                    <td className="py-4 px-5 sm:px-6 align-middle text-right whitespace-nowrap">
                       <button
                         onClick={() => handleOpenRecord(item)}
-                        className="min-h-[36px] sm:min-h-[38px] h-[36px] sm:h-[38px] w-[36px] sm:w-[38px] rounded-xl border border-slate-200 text-slate-700 hover:text-slate-950 hover:bg-slate-100 inline-flex items-center justify-center transition-colors cursor-pointer shadow-xs"
+                        className="min-h-[38px] h-[38px] w-[38px] rounded-xl border border-slate-200 text-slate-700 hover:text-slate-950 hover:bg-slate-100 inline-flex items-center justify-center transition-colors cursor-pointer shadow-xs"
                         title="View Full Consent Transcript"
                       >
-                        <Eye className="w-4 h-4" />
+                        <Eye className="w-4 h-4 text-slate-700" />
                       </button>
                     </td>
                   </tr>

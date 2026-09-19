@@ -287,25 +287,25 @@ export default function AdminAnalyticsPage() {
         </div>
 
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-xs">
-            <thead className="bg-[#FAF8F5] border-b border-[#EAE3D7] text-slate-800 font-bold uppercase tracking-wider">
+          <table className="w-full min-w-[760px] text-left text-xs sm:text-sm border-collapse">
+            <thead className="bg-[#FAF8F5] border-b border-[#EAE3D7] text-slate-700 font-bold uppercase tracking-wider text-xs">
               <tr>
-                <th className="px-4 py-3">Section / Page Route</th>
-                <th className="px-4 py-3">Page Name</th>
-                <th className="px-4 py-3">Unique Views</th>
-                <th className="px-4 py-3">Avg Time on Page</th>
-                <th className="px-4 py-3">Bounce Rate</th>
+                <th className="px-5 py-3.5 align-middle w-[26%] min-w-[190px]">Section / Page Route</th>
+                <th className="px-4 py-3.5 align-middle w-[26%] min-w-[190px]">Page Name</th>
+                <th className="px-4 py-3.5 align-middle w-[16%] min-w-[120px] whitespace-nowrap">Unique Views</th>
+                <th className="px-4 py-3.5 align-middle w-[17%] min-w-[130px] whitespace-nowrap">Avg Time on Page</th>
+                <th className="px-5 py-3.5 align-middle w-[15%] min-w-[110px] whitespace-nowrap">Bounce Rate</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100 text-slate-800 font-medium">
               {digitalCampusEngagement.map((item, idx) => (
                 <tr key={idx} className="hover:bg-slate-50 transition-colors">
-                  <td className="px-4 py-3 font-mono font-bold text-slate-900">{item.path}</td>
-                  <td className="px-4 py-3 text-slate-800">{item.name}</td>
-                  <td className="px-4 py-3 font-bold text-slate-950 font-mono">{item.uniqueViews}</td>
-                  <td className="px-4 py-3 text-slate-700">{item.avgDuration}</td>
-                  <td className="px-4 py-3">
-                    <span className="px-2 py-0.5 rounded-md text-[11px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
+                  <td className="px-5 py-4 align-middle font-mono font-bold text-slate-900">{item.path}</td>
+                  <td className="px-4 py-4 align-middle text-slate-800">{item.name}</td>
+                  <td className="px-4 py-4 align-middle font-bold text-slate-950 font-mono whitespace-nowrap">{item.uniqueViews}</td>
+                  <td className="px-4 py-4 align-middle text-slate-700 whitespace-nowrap">{item.avgDuration}</td>
+                  <td className="px-5 py-4 align-middle whitespace-nowrap">
+                    <span className="px-2.5 py-1 rounded-md text-xs font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
                       {item.bounceRate}
                     </span>
                   </td>

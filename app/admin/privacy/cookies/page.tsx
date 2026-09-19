@@ -253,40 +253,40 @@ export default function AdminPrivacyCookiesPage() {
         </div>
 
         <div className="overflow-x-auto">
-          <table className="w-full text-left border-collapse text-xs sm:text-sm">
+          <table className="w-full min-w-[840px] text-left border-collapse text-xs sm:text-sm">
             <thead>
               <tr className="bg-slate-50/90 border-b border-slate-100 text-slate-700 font-bold uppercase tracking-wider text-xs">
-                <th className="p-4 pl-6">Cookie Identifier</th>
-                <th className="p-4">Category</th>
-                <th className="p-4">Lifespan</th>
-                <th className="p-4">Provider Domain</th>
-                <th className="p-4">Purpose</th>
-                <th className="p-4 text-center pr-6">DPDP Status</th>
+                <th className="py-3.5 px-5 sm:px-6 align-middle w-[20%] min-w-[180px]">Cookie Identifier</th>
+                <th className="py-3.5 px-4 align-middle w-[13%] min-w-[120px] whitespace-nowrap">Category</th>
+                <th className="py-3.5 px-4 align-middle w-[12%] min-w-[110px] whitespace-nowrap">Lifespan</th>
+                <th className="py-3.5 px-4 align-middle w-[15%] min-w-[140px] whitespace-nowrap">Provider Domain</th>
+                <th className="py-3.5 px-4 align-middle w-[28%] min-w-[220px]">Purpose</th>
+                <th className="py-3.5 px-5 sm:px-6 align-middle text-center w-[12%] min-w-[110px] whitespace-nowrap">DPDP Status</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100 text-xs sm:text-sm">
+            <tbody className="divide-y divide-slate-100">
               {cookieRegister.map((cookie, index) => (
                 <tr key={index} className="hover:bg-slate-50/80 transition-colors">
-                  <td className="p-4 pl-6 font-mono font-bold text-slate-950 text-xs">
+                  <td className="py-4 px-5 sm:px-6 align-middle font-mono font-bold text-slate-950 text-xs">
                     {cookie.name}
                   </td>
 
-                  <td className="p-4 whitespace-nowrap">
+                  <td className="py-4 px-4 align-middle whitespace-nowrap">
                     <span className="px-2.5 py-1 rounded-md bg-slate-100 text-slate-800 text-xs font-semibold">
                       {cookie.category}
                     </span>
                   </td>
 
-                  <td className="p-4 whitespace-nowrap text-slate-800 font-medium">{cookie.duration}</td>
+                  <td className="py-4 px-4 align-middle whitespace-nowrap text-slate-800 font-medium">{cookie.duration}</td>
 
-                  <td className="p-4 whitespace-nowrap text-slate-700 font-medium">{cookie.provider}</td>
+                  <td className="py-4 px-4 align-middle whitespace-nowrap text-slate-700 font-medium">{cookie.provider}</td>
 
-                  <td className="p-4 max-w-sm text-xs leading-relaxed text-slate-700 font-normal">
+                  <td className="py-4 px-4 align-middle text-xs leading-relaxed text-slate-700 font-normal">
                     {cookie.purpose}
                   </td>
 
-                  <td className="p-4 text-center pr-6">
-                    <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 text-xs font-bold border border-emerald-200/60 shadow-xs">
+                  <td className="py-4 px-5 sm:px-6 align-middle text-center whitespace-nowrap">
+                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 text-xs font-bold border border-emerald-200/60 shadow-xs">
                       <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
                       Approved
                     </span>

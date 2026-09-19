@@ -194,17 +194,17 @@ export default function AdminPrivacyRequestsPage() {
       {/* Table of Requests */}
       <div className="rounded-2xl bg-white border border-[#EAE3D7] overflow-hidden shadow-xs">
         <div className="overflow-x-auto">
-          <table className="w-full text-left border-collapse">
+          <table className="w-full min-w-[880px] text-left border-collapse text-xs sm:text-sm">
             <thead>
               <tr className="border-b border-slate-100 bg-slate-50/70 text-xs font-bold uppercase tracking-wider text-slate-700">
-                <th className="p-4 pl-6">Token / Identity</th>
-                <th className="p-4">Classification</th>
-                <th className="p-4">Submitted</th>
-                <th className="p-4 text-center">Status</th>
-                <th className="p-4 pr-6 text-right">Actions</th>
+                <th className="py-3.5 px-5 sm:px-6 align-middle w-[26%] min-w-[220px]">Token / Identity</th>
+                <th className="py-3.5 px-4 align-middle w-[32%] min-w-[250px]">Classification</th>
+                <th className="py-3.5 px-4 align-middle w-[14%] min-w-[120px] whitespace-nowrap">Submitted</th>
+                <th className="py-3.5 px-4 align-middle text-center w-[13%] min-w-[110px] whitespace-nowrap">Status</th>
+                <th className="py-3.5 px-5 sm:px-6 align-middle text-right w-[15%] min-w-[140px] whitespace-nowrap">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100 text-xs sm:text-sm">
+            <tbody className="divide-y divide-slate-100">
               {filteredRequests.length === 0 ? (
                 <tr>
                   <td colSpan={5} className="p-8 text-center text-slate-500 font-medium">
@@ -219,7 +219,7 @@ export default function AdminPrivacyRequestsPage() {
                       req.status === "Pending" ? "bg-amber-50/20" : ""
                     }`}
                   >
-                    <td className="p-4 pl-6">
+                    <td className="py-4 px-5 sm:px-6 align-middle">
                       <div className="flex items-center gap-2">
                         <span className="font-mono text-xs font-bold text-slate-950">
                           {req.id}
@@ -238,18 +238,18 @@ export default function AdminPrivacyRequestsPage() {
                       <p className="text-xs text-slate-600 font-medium">{req.email}</p>
                     </td>
 
-                    <td className="p-4">
+                    <td className="py-4 px-4 align-middle">
                       <span className="font-semibold text-slate-900 block">{req.requestType}</span>
                       <p className="text-xs text-slate-700 italic line-clamp-2 max-w-sm mt-0.5">
                         &ldquo;{req.message}&rdquo;
                       </p>
                     </td>
 
-                    <td className="p-4 whitespace-nowrap text-xs text-slate-700 font-medium">
+                    <td className="py-4 px-4 align-middle whitespace-nowrap text-xs text-slate-700 font-medium">
                       {req.submittedDate}
                     </td>
 
-                    <td className="p-4 text-center">
+                    <td className="py-4 px-4 align-middle text-center whitespace-nowrap">
                       <span
                         className={`inline-block px-3 py-1 rounded-full text-xs font-bold shadow-xs ${
                           req.status === "Pending"
@@ -265,10 +265,10 @@ export default function AdminPrivacyRequestsPage() {
                       </span>
                     </td>
 
-                    <td className="p-4 text-right pr-6 whitespace-nowrap">
+                    <td className="py-4 px-5 sm:px-6 align-middle text-right whitespace-nowrap">
                       <button
                         onClick={() => handleOpenDrawer(req)}
-                        className="min-h-[36px] sm:min-h-[38px] h-[36px] sm:h-[38px] px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs sm:text-sm font-semibold transition-colors cursor-pointer shadow-xs"
+                        className="min-h-[38px] h-[38px] px-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs sm:text-sm font-semibold transition-colors cursor-pointer shadow-xs whitespace-nowrap"
                       >
                         Review Request
                       </button>

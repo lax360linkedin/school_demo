@@ -398,23 +398,23 @@ export default function AdminCareersPage() {
       {/* Open Positions Table */}
       <div className="bg-white rounded-2xl border border-[#EAE3D7] shadow-2xs overflow-hidden">
         <div className="overflow-x-auto">
-          <table className="w-full text-left text-xs">
-            <thead className="bg-[#FAF8F5] border-b border-[#EAE3D7] text-slate-600 font-semibold uppercase tracking-wider">
+          <table className="w-full min-w-[920px] text-left text-xs sm:text-sm border-collapse">
+            <thead className="bg-[#FAF8F5] border-b border-[#EAE3D7] text-slate-700 font-bold uppercase tracking-wider text-xs">
               <tr>
-                <th className="px-5 py-3.5">Position</th>
-                <th className="px-4 py-3.5">Department</th>
-                <th className="px-4 py-3.5">School Level</th>
-                <th className="px-4 py-3.5">Type</th>
-                <th className="px-4 py-3.5">Location</th>
-                <th className="px-4 py-3.5">Status</th>
-                <th className="px-4 py-3.5 text-center">Applications</th>
-                <th className="px-5 py-3.5 text-right">Actions</th>
+                <th className="px-5 py-3.5 align-middle w-[23%] min-w-[210px]">Position</th>
+                <th className="px-4 py-3.5 align-middle w-[14%] min-w-[130px] whitespace-nowrap">Department</th>
+                <th className="px-4 py-3.5 align-middle w-[13%] min-w-[120px] whitespace-nowrap">School Level</th>
+                <th className="px-4 py-3.5 align-middle w-[11%] min-w-[100px] whitespace-nowrap">Type</th>
+                <th className="px-4 py-3.5 align-middle w-[10%] min-w-[100px] whitespace-nowrap">Location</th>
+                <th className="px-4 py-3.5 align-middle w-[9%] min-w-[95px] whitespace-nowrap">Status</th>
+                <th className="px-4 py-3.5 align-middle text-center w-[8%] min-w-[85px] whitespace-nowrap">Applications</th>
+                <th className="px-5 py-3.5 align-middle text-right w-[12%] min-w-[140px] whitespace-nowrap">Actions</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100">
               {filteredJobs.length === 0 ? (
                 <tr>
-                  <td colSpan={8} className="px-5 py-12 text-center text-slate-400">
+                  <td colSpan={8} className="px-5 py-12 text-center text-slate-500 font-medium">
                     No positions found matching the current search and filter criteria.
                   </td>
                 </tr>
@@ -428,27 +428,27 @@ export default function AdminCareersPage() {
 
                   return (
                     <tr key={job.id} className="hover:bg-slate-50/70 transition-colors">
-                      <td className="px-5 py-4 font-medium text-slate-900">
-                        <div className="font-semibold text-slate-900">{job.title}</div>
-                        <div className="text-xs text-slate-600 mt-0.5 font-medium">
+                      <td className="px-5 py-4 align-middle">
+                        <div className="font-semibold text-slate-900 text-sm">{job.title}</div>
+                        <div className="text-xs text-slate-600 mt-0.5 font-medium whitespace-nowrap">
                           Deadline: {job.applicationDeadline}
                         </div>
                       </td>
-                      <td className="px-4 py-4 text-slate-800 font-medium">
+                      <td className="px-4 py-4 align-middle text-slate-800 font-medium whitespace-nowrap">
                         {job.department}
                       </td>
-                      <td className="px-4 py-4 text-slate-800">
+                      <td className="px-4 py-4 align-middle whitespace-nowrap">
                         <span className="px-2.5 py-1 rounded-md bg-slate-100 text-slate-800 font-semibold text-xs">
                           {job.schoolLevel}
                         </span>
                       </td>
-                      <td className="px-4 py-4 text-slate-800 font-medium">
+                      <td className="px-4 py-4 align-middle text-slate-800 font-medium whitespace-nowrap">
                         {job.employmentType}
                       </td>
-                      <td className="px-4 py-4 text-slate-800 font-medium">
+                      <td className="px-4 py-4 align-middle text-slate-800 font-medium whitespace-nowrap">
                         {job.location}
                       </td>
-                      <td className="px-4 py-4">
+                      <td className="px-4 py-4 align-middle whitespace-nowrap">
                         <span
                           className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold shadow-xs ${
                             job.status === "Published"
@@ -461,7 +461,7 @@ export default function AdminCareersPage() {
                           {job.status}
                         </span>
                       </td>
-                      <td className="px-4 py-4 text-center">
+                      <td className="px-4 py-4 align-middle text-center whitespace-nowrap">
                         <Link
                           href={`/admin/careers/applications?job=${encodeURIComponent(job.title)}`}
                           className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-900 font-bold text-xs transition-colors border border-amber-200/60 shadow-xs"
@@ -471,7 +471,7 @@ export default function AdminCareersPage() {
                           <span>{jobAppsCount}</span>
                         </Link>
                       </td>
-                      <td className="px-5 py-4 text-right">
+                      <td className="px-5 py-4 align-middle text-right whitespace-nowrap">
                         <div className="flex items-center justify-end gap-2">
                           {/* Edit Button */}
                           <button
