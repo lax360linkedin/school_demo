@@ -6,6 +6,10 @@ A premium, modern Indian international school website and administrative portal 
 
 - **Public School Portal**:
   - **Persistent Global Navigation Bar**: Pure route-based navigation across Home, About, Programs, Campus Life, Facilities, Admissions, Careers, and Contact.
+  - **School Assistant Chatbot**: 100% frontend-only AI-style assistant with route awareness, quick inquiry chips, and local school knowledge base.
+  - **Vision & Mission**: Dedicated 3D floating perspective cards on the About page highlighting institutional purpose and academic excellence.
+  - **Footer Social Channels**: Direct touchpoints for WhatsApp, Instagram, and YouTube with custom SVG branding and hover glows.
+  - **Privacy & Cookie Choices**: Horizontally centered viewport modal with granular preferences and responsive floating element clearance.
   - **Cinematic Experience**: Interactive canvas visual scroll engine showcasing campus infrastructure and student life.
   - **Academic Frameworks**: Stage-by-stage curriculum breakdowns (Early Years, Primary, Middle, and Senior Secondary IB/Cambridge).
   - **Student Life & Clubs**: Clubs, societies, and four-house collegiate system.
